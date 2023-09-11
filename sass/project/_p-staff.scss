@@ -1,0 +1,195 @@
+@use "../global" as global;
+
+.p-staff {
+    &__director {
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 60px;
+        }
+
+        margin-top: 40px;
+
+        &-greeting {
+
+            @include global.mq('pc') {
+                margin-right: 80px;
+            }
+
+            &-top {}
+
+            &-bottom {}
+
+        }
+
+        &-body {
+            &-top {}
+
+            &-bottom {
+                text-align: right;
+            }
+
+        }
+
+        &-head {
+            font-size: 28px;
+            letter-spacing: 2.28px;
+            margin-bottom: 40px;
+        }
+
+        &-text {
+            margin-bottom: 40px;
+        }
+
+        &-clinicname {}
+
+        &-directorname {}
+
+        &-career {
+            &-wrap {
+                display: flex;
+                justify-content: left;
+                margin-bottom: 16px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-text {
+                &:first-child {
+                    margin-right: 16px;
+                }
+            }
+        }
+
+        &-license {
+            &-wrap {}
+
+            &-name {
+                margin-bottom: 16px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+
+        &-picture {
+            @include global.mq('sp') {
+                margin: 40px 0;
+            }
+
+            @include global.mq('tab') {
+                margin: 40px 0;
+            }
+
+            img {}
+        }
+    }
+
+    &__ttl {
+        text-align: center;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: left;
+        flex-wrap: wrap;
+
+        @include global.mq('sp') {
+            display: block;
+            justify-content: flex-start;
+        }
+
+    }
+}
+
+.p-staff__item {
+    @include global.mq('sp') {
+        width: 100%;
+        margin-top: 50px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @include global.mq('pc') {
+        width: calc(100% / 3 - 80px * 2 / 3);
+        margin-right: 80px;
+
+        &:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        &:nth-child(n+4) {
+            margin-top: 60px;
+        }
+    }
+
+    @include global.mq('tab') {
+        width: calc(100% / 2 - 20px * 1 / 2);
+        margin-right: 20px;
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+
+        &:nth-child(n+3) {
+            margin-top: 40px;
+        }
+    }
+
+    &-img {}
+
+    &-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    &-jobname {
+        margin-right: 12px;
+        font-size: 12px;
+    }
+
+    &-name {
+        font-size: 18px;
+    }
+
+    table {
+        width: 100%;
+
+
+        tr {
+            height: calc(166px / 3);
+        }
+
+        th {
+            width: 50%;
+            background: global.$sub-color02;
+        }
+
+        th,
+        td {
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        td {}
+    }
+}
+
+.swiper_2 {
+    height: auto;
+    width: 100vw;
+
+    .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+
+    .swiper-slide {}
+}

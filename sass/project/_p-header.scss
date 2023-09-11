@@ -1,0 +1,11 @@
+@use "../global" as global;
+
+.p-header {
+    &-nav {}
+
+    &-info {
+        &__address {}
+
+        &__tel {}
+    }
+}

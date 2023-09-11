@@ -1,0 +1,184 @@
+@use "../global" as global;
+
+.p-top__blog {
+    text-align: center;
+
+    &-btn {
+        text-align: center;
+    }
+
+    &-items {
+
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        @include global.mq('tab') {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        margin: 60px 0 40px;
+    }
+
+    &-item {
+        position: relative;
+        min-width: 0;
+        display: block;
+        border-radius: 20px;
+
+        &:hover {
+            .p-top__blog-item-img>img {
+                transform: scale(1.05);
+
+            }
+        }
+
+        @include global.mq('pc') {
+            width: calc(100% / 3 - 50px * 2 / 3);
+            margin: 0px 50px 50px 0;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('tab') {
+            width: calc(100% / 2 - 30px * 1 / 2);
+            margin: 0px 30px 30px 0;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        }
+
+        @include global.mq('sp') {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 20px;
+            align-items: center;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-label {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: global.$accent-color;
+            color: global.$text-color2;
+            text-align: center;
+            line-height: 35px;
+            font-size: 10px;
+            z-index: 1;
+
+            @include global.mq('sp') {
+                top: 5px;
+                left: 5px;
+            }
+
+            @include global.mq('pc') {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 14px;
+
+            }
+        }
+
+        &-img {
+            overflow: hidden;
+            border-radius: 20px 20px 0 0;
+            z-index: -1;
+
+            @include global.mq('sp') {
+                width: 130px;
+                flex-shrink: 0;
+            }
+
+            >img {
+                transition: transform 0.4s;
+            }
+
+            img {
+                z-index: -1;
+                width: 100%;
+
+                @include global.mq('sp') {
+                    height: 100px;
+                }
+            }
+        }
+
+        &-body {
+            text-align: left;
+            padding: 24px 24px 10px 24px;
+
+            @include global.mq('sp') {
+                padding: 8px 10px;
+            }
+
+            position: relative;
+        }
+
+        &-category {
+            display: inline-block;
+            font-size: 11px;
+            background: global.$main-color;
+            color: global.$text-color2;
+            padding: 2px 8px;
+            border-radius: 14px;
+
+            @include global.mq('pc') {
+                position: absolute;
+                top: -15px;
+                left: 24px;
+                font-size: 11px;
+                background: global.$main-color;
+                color: global.$text-color2;
+                padding: 6px 12px;
+                border-radius: 14px;
+            }
+
+            @include global.mq('tab') {
+                position: absolute;
+                top: -15px;
+                left: 24px;
+                font-size: 11px;
+                background: global.$main-color;
+                color: global.$text-color2;
+                padding: 6px 12px;
+                border-radius: 14px;
+            }
+
+        }
+
+        &-txt {
+            text-align: left;
+
+            @include global.mq('sp') {
+                font-size: 14px;
+            }
+        }
+
+        &-date {
+            text-align: left;
+            color: #888888;
+            font-size: 11px;
+            padding-top: 5px;
+        }
+    }
+
+}

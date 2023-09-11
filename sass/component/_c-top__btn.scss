@@ -1,0 +1,50 @@
+@use "../global" as global;
+
+.c-top__btn {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: global.$main-color;
+    background: global.$text-color2;
+    font-size: 14px;
+    padding: 10px 40px;
+    border-radius: calc(43px / 2);
+    transition: all 0.5s;
+    border: 1px solid global.$main-color;
+    position: relative;
+
+    &:hover {
+        background: global.$main-color;
+        color: global.$text-color2;
+    }
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 14px;
+        background-image: url(../img/トップ/arrow-right-blue.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 14px;
+        height: 14px;
+        transition: all 0.5s;
+    }
+
+    &:hover {
+        &::before {
+            content: '';
+            background-image: url(../img/トップ/arrow-right-white.svg);
+
+            right: 10px;
+        }
+    }
+
+    @include global.mq('sp') {
+        margin: 0 auto;
+    }
+}

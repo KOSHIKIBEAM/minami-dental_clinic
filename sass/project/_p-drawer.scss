@@ -1,0 +1,284 @@
+@use "../global" as global;
+
+
+// ハンバーガーアイコン
+$drawer-bar-space: 4.5px;
+$drawer-bar-width: 27px;
+$drawer-bar-height: 2.25px;
+$drawer-content-width: 100%;
+
+.p-drawer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    background: inherit;
+    z-index: map-get(global.$layer, "drawer") + 2;
+    cursor: pointer;
+    transition: opacity .3s;
+
+    @include global.mq('pc') {
+        top: 20px;
+        right: 20px;
+    }
+
+    &-logo {
+        &-img {}
+
+        .custom-logo {
+            width: 120%;
+        }
+    }
+
+    &-ttl {}
+
+    span {
+        width: $drawer-bar-width;
+        height: $drawer-bar-height;
+        background: global.$main-color;
+        border-radius: 100px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .5s;
+        top: 50%;
+
+        &:nth-child(1) {
+            top: calc(50% - $drawer-bar-space - $drawer-bar-height * 3 / 2);
+        }
+
+        &:nth-child(2) {}
+
+        &:nth-child(3) {
+            top: calc(50% + $drawer-bar-space + $drawer-bar-height * 3 / 2);
+        }
+    }
+
+    &.active {
+
+        span {
+            width: $drawer-bar-width;
+            height: $drawer-bar-height;
+            background: global.$text-color2;
+            border-radius: 100px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+            top: 50%;
+
+            &:nth-of-type(1) {
+                transition: 0.5s ease-out;
+                transform: translate(-13px, -2px)rotate(45deg);
+            }
+
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+
+            &:nth-of-type(3) {
+                transition: 0.5s ease-out;
+                transform: translate(-13px, -2px)rotate(-45deg);
+            }
+        }
+    }
+
+    &-content {
+        top: 0px;
+        height: 100vh;
+        z-index: map-get(global.$layer, "drawer");
+        width: 100vw;
+        background: global.$sub-color01;
+        color: global.$text-color2;
+        opacity: 0;
+        visibility: hidden;
+        transition: right .5s,
+            opacity .5s;
+        pointer-events: none;
+        right: 0;
+        padding: 20px 15px;
+        position: fixed;
+
+        @include global.mq('pc') {
+            height: 100vh;
+
+        }
+
+        @include global.mq('sp') {
+            width: 100%;
+        }
+
+        &.open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .p-drawer-logo {
+            width: 120px;
+            padding: 10px 10px 0;
+
+            &-link {
+
+                img {}
+            }
+        }
+
+        .p-drawer-nav {
+            padding: 40px 60px;
+
+            .p-drawer-nav__items {
+                list-style: none;
+
+                li {
+                    text-align: left;
+                    border-top: dashed 1px global.$text-color2;
+                    width: 100%;
+                    padding: 18px 0;
+
+                    &:last-child {
+                        border-bottom: dashed 1px global.$text-color2;
+                    }
+
+
+                    a {
+                        font-size: 14px;
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        padding-left: 40px;
+
+                        &::after {
+                            content: '';
+                            background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-right.png);
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            height: 14px;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 14px;
+                            z-index: map-get(global.$layer, "drawer") + 1;
+                        }
+
+                        span {
+                            font-size: 14px;
+                            padding-left: 40px;
+                        }
+
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            transform: translateY(-50%);
+                            width: 32px;
+                            height: 32px;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        &-sns {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+
+            @include global.mq('pc') {
+                margin-top: 56px;
+
+            }
+
+
+            a {
+                width: 40px;
+                margin-right: 20px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                img {}
+            }
+        }
+    }
+}
+
+.l-drawer-nav {
+
+    &__home,
+    &__about,
+    &__medical,
+    &__staff,
+    &__blog,
+    &__contact {
+        a {
+
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                transition: transform 0.3s;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+
+    &__home {
+        a {
+            &::before {
+                background-image: url(../img/menu-sp-02/icon-01.svg);
+            }
+        }
+    }
+
+    &__about {
+        a {
+            &::before {
+                background-image: url(../img/menu-sp-02/icon-02.svg);
+            }
+        }
+    }
+
+    &__medical {
+        a {
+            &::before {
+                background-image: url(../img/menu-sp-02/icon-03.svg);
+            }
+        }
+    }
+
+    &__staff {
+        a {
+            &::before {
+                background-image: url(../img/menu-sp-02/icon-04.svg);
+            }
+        }
+    }
+
+    &__blog {
+        a {
+            &::before {
+                background-image: url(../img/menu-sp-02/icon-05.svg);
+            }
+        }
+    }
+
+    &__contact {
+        a {
+            &::before {
+                background-image: url(../img/menu-sp-02/icon-07.svg);
+            }
+        }
+    }
+}

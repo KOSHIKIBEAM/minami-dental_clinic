@@ -1,0 +1,3897 @@
+@charset "UTF-8";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td,
+small,
+button,
+time,
+figure {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+li,
+dd {
+  list-style-type: none;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+main,
+aside,
+figure,
+figcaption {
+  display: block;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  color: #333333;
+  font-family: "M PLUS Rounded 1c", "Zen Kaku Gothic New", "Meiryo", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  background: #FFFFFF;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+}
+
+.l-header {
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  z-index: 20;
+}
+@media screen and (max-width: 479px) {
+  .l-header {
+    height: 60px;
+  }
+}
+.l-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px;
+  height: 60px;
+}
+@media screen and (min-width: 1100px) {
+  .l-header__inner {
+    padding: 0px 40px;
+    height: 80px;
+  }
+}
+.l-header__logo a img {
+  width: 269px;
+}
+.l-header__right {
+  display: flex;
+  justify-content: right;
+}
+@media screen and (max-width: 479px) {
+  .l-header__right {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-header__right {
+    display: none;
+  }
+}
+.l-header__right .l-header-nav {
+  display: flex;
+  justify-content: right;
+}
+.l-header .l-header-info {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+.l-header .l-header-info__address {
+  font-size: 12px;
+  margin-top: 15px;
+}
+.l-header .l-header-info__tel {
+  font-size: 32px;
+  color: #1391E6;
+  position: relative;
+  margin-left: 32px;
+}
+.l-header .l-header-info__tel::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -32px;
+  transform: translateY(-50%);
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon_tel.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 28px;
+  height: 28px;
+}
+
+.l-header-nav__items {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 64px;
+}
+.l-header-nav__items li {
+  line-height: 60px;
+  margin-right: 24px;
+  padding-top: 30px;
+}
+.l-header-nav__items li:last-child {
+  margin-right: 0;
+}
+.l-header-nav__items li a {
+  position: relative;
+  transition: transform 0.3s;
+}
+.l-header-nav__items li a::after {
+  content: "";
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1391E6;
+  transition: transform 0.3s;
+  transform-origin: center top;
+  transform: translateX(-50%) scale(0, 1);
+}
+.l-header-nav__items li a:hover {
+  color: #1391E6;
+}
+.l-header-nav__items li a:hover::after {
+  content: "";
+  transform: translateX(-50%) scale(1, 1);
+}
+
+.l-header-nav__home a, .l-header-nav__about a, .l-header-nav__medical a, .l-header-nav__staff a, .l-header-nav__blog a, .l-header-nav__contact a {
+  position: relative;
+}
+.l-header-nav__home a::before, .l-header-nav__about a::before, .l-header-nav__medical a::before, .l-header-nav__staff a::before, .l-header-nav__blog a::before, .l-header-nav__contact a::before {
+  content: "";
+  position: absolute;
+  bottom: 23px;
+  transform: translateX(-50%);
+  left: 50%;
+  transition: transform 0.3s;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+}
+.l-header-nav__home a::before {
+  background-image: url(../img/header-svg/icon-01.svg);
+}
+.l-header-nav__home a:hover::before {
+  background-image: url(../img/header-svg/icon-01-hover.svg);
+}
+.l-header-nav__about a::before {
+  background-image: url(../img/header-svg/icon-02.svg);
+}
+.l-header-nav__about a:hover::before {
+  background-image: url(../img/header-svg/icon-02-hover.svg);
+}
+.l-header-nav__medical a::before {
+  background-image: url(../img/header-svg/icon-03.svg);
+}
+.l-header-nav__medical a:hover::before {
+  background-image: url(../img/header-svg/icon-03-hover.svg);
+}
+.l-header-nav__staff a::before {
+  background-image: url(../img/header-svg/icon-04.svg);
+}
+.l-header-nav__staff a:hover::before {
+  background-image: url(../img/header-svg/icon-04-hover.svg);
+}
+.l-header-nav__blog a::before {
+  background-image: url(../img/header-svg/icon-05.svg);
+}
+.l-header-nav__blog a:hover::before {
+  background-image: url(../img/header-svg/icon-05-hover.svg);
+}
+.l-header-nav__contact a::before {
+  background-image: url(../img/header-svg/icon-07.svg);
+}
+.l-header-nav__contact a:hover::before {
+  background-image: url(../img/header-svg/icon-07-hover.svg);
+}
+
+.l-top__recommend, .l-top__medical, .l-top__blog {
+  position: relative;
+  z-index: 1;
+  padding-top: 110px;
+  padding: 0 150px;
+}
+@media screen and (max-width: 479px) {
+  .l-top__recommend, .l-top__medical, .l-top__blog {
+    padding: 0 15px;
+  }
+}
+.l-top__recommend {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.l-top__medical {
+  background-color: #DFF1FD;
+  padding-bottom: 100px;
+}
+.l-top__blog {
+  margin: 60px auto 160px;
+}
+
+.l-top__concept {
+  margin-top: 60px;
+  padding-top: 110px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 1100px) {
+  .l-top__concept {
+    padding-top: 240px;
+    padding-bottom: 240px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-top__concept {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+.l-top__concept::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150%;
+  height: 308px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/concept-bg-1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+}
+@media screen and (min-width: 1100px) {
+  .l-top__concept::before {
+    margin-left: 416px;
+    height: 725px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-top__concept::before {
+    margin-left: 416px;
+    height: 725px;
+  }
+}
+
+.l-about__concept {
+  overflow: hidden;
+  padding-top: 60px;
+}
+@media screen and (min-width: 1100px) {
+  .l-about__concept {
+    padding-top: 110px;
+    padding-bottom: 160px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-about__concept {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.l-about__gallery {
+  padding: 100px 15px;
+  width: 100%;
+}
+@media screen and (min-width: 1100px) {
+  .l-about__gallery {
+    padding-top: 110px;
+    padding-bottom: 240px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.l-footer {
+  z-index: 42;
+  position: relative;
+}
+.l-footer::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  height: 32px;
+  width: 100vw;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/footer-wave.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top top;
+}
+.l-footer__inner {
+  background: #DFF1FD;
+  padding: 0px 10px;
+}
+@media screen and (min-width: 1100px) {
+  .l-footer__inner {
+    padding: 56px 140px 60px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-footer__inner {
+    padding: 30px 60px 0;
+  }
+}
+.l-footer__info {
+  background: #FFFFFF;
+  padding: 32px 10px 20px;
+}
+@media screen and (max-width: 479px) {
+  .l-footer__info {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-footer__info {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .l-footer__info {
+    display: flex;
+    justify-content: center;
+    padding: 40px 50px;
+    align-items: center;
+    margin-bottom: 45px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .l-footer__nav {
+    padding-left: 32px;
+  }
+}
+
+.l-medical__main, .l-medical__items {
+  position: relative;
+  z-index: 1;
+}
+.l-medical__main {
+  padding: 80px 150px 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-medical__main {
+    padding: 40px 50px 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .l-medical__main {
+    padding: 40px 15px 0;
+  }
+}
+#medical-items1,
+#medical-items2 {
+  margin-top: 160px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  #medical-items1,
+  #medical-items2 {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 479px) {
+  #medical-items1,
+  #medical-items2 {
+    margin-top: 80px;
+  }
+}
+
+#medical-items2 {
+  margin-bottom: 160px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  #medical-items2 {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 479px) {
+  #medical-items2 {
+    margin-bottom: 80px;
+  }
+}
+
+.l-blog {
+  position: relative;
+  z-index: 1;
+  padding-top: 110px;
+  padding: 0 150px;
+  margin: 60px auto 160px;
+}
+@media screen and (max-width: 479px) {
+  .l-blog {
+    padding: 0 15px;
+    margin: 60px auto 100px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .l-blog__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 1010px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .l-single {
+    margin: 80px 0px 160px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-single {
+    margin: 80px 0px 160px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .l-single {
+    margin: 80px 0px 100px;
+  }
+}
+.l-single__inner {
+  width: 100%;
+  padding: 0 20px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-single__inner {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .l-single__inner {
+    display: flex;
+    justify-content: space-between;
+    width: 1010px;
+    margin: 0 auto;
+  }
+}
+
+.l-staff .swiper_2 {
+  width: 600px;
+  height: 300px;
+}
+.l-staff__director-inner {
+  width: 100%;
+}
+@media screen and (max-width: 479px) {
+  .l-staff__director-inner {
+    padding: 0 20px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-staff__director-inner {
+    padding: 0 50px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .l-staff__director-inner {
+    width: 1000px;
+    margin: 0 auto 160px;
+  }
+}
+.l-staff__dh-inner {
+  width: 100%;
+}
+@media screen and (max-width: 479px) {
+  .l-staff__dh-inner {
+    padding: 0 20px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-staff__dh-inner {
+    padding: 0 50px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .l-staff__dh-inner {
+    width: 1000px;
+    margin: 0 auto 160px;
+  }
+}
+
+#staff,
+#director {
+  margin-top: 160px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  #staff,
+  #director {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 479px) {
+  #staff,
+  #director {
+    margin-top: 80px;
+  }
+}
+
+#staff {
+  margin-top: 160px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  #staff {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 479px) {
+  #staff {
+    margin-top: 80px;
+  }
+}
+
+#director {
+  margin-bottom: 160px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  #director {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 479px) {
+  #director {
+    margin-bottom: 80px;
+  }
+}
+
+.l-fv {
+  z-index: 19;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 1100px) {
+  .l-reservation {
+    margin: 80px 0px 160px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-reservation {
+    margin: 80px 0px 160px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .l-reservation {
+    margin: 80px 0px 100px;
+  }
+}
+.l-reservation__inner {
+  width: 100%;
+  padding: 0 20px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-reservation__inner {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .l-reservation__inner {
+    width: 730px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .l-contact {
+    margin: 80px 0px 160px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-contact {
+    margin: 80px 0px 160px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .l-contact {
+    margin: 80px 0px 100px;
+  }
+}
+.l-contact__inner {
+  width: 100%;
+  padding: 0 20px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .l-contact__inner {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .l-contact__inner {
+    width: 730px;
+    margin: 0 auto;
+  }
+}
+
+.c-footer__btn1 {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #FFFFFF;
+  background: #1391E6;
+  font-size: 14px;
+  padding: 17px 45px 17px 65px;
+  border-radius: 30px;
+  transition: 0.3s;
+  position: relative;
+}
+@media screen and (max-width: 479px) {
+  .c-footer__btn1 {
+    padding: 11px 49px 11px 60px;
+  }
+}
+.c-footer__btn1:hover {
+  color: #1391E6;
+  background: #FFFFFF;
+  border: 1px solid #1391E6;
+}
+.c-footer__btn1::before {
+  content: "";
+  position: absolute;
+  top: 57%;
+  transform: translateY(-50%);
+  left: 35px;
+  background-image: url(../img/common/footer-reservation.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  transition: 0.3s;
+  height: 20px;
+}
+@media screen and (max-width: 479px) {
+  .c-footer__btn1::before {
+    top: 63%;
+    left: 29px;
+  }
+}
+.c-footer__btn1:hover::before {
+  background-image: url(../img/common/footer-reservation-hover.svg);
+}
+@media screen and (max-width: 479px) {
+  .c-footer__btn1 {
+    margin: 0 auto;
+  }
+}
+
+.c-footer__btn2 {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #1391E6;
+  background: #FFFFFF;
+  font-size: 14px;
+  padding: 17px 45px 17px 65px;
+  border-radius: 30px;
+  transition: 0.3s;
+  border: 1px solid #1391E6;
+  position: relative;
+}
+@media screen and (max-width: 479px) {
+  .c-footer__btn2 {
+    padding: 11px 30px 11px 50px;
+  }
+}
+.c-footer__btn2:hover {
+  background: #1391E6;
+  color: #FFFFFF;
+  border: none;
+}
+.c-footer__btn2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40px;
+  transition: 0.3s;
+  background-image: url(../img/common/footer-contact.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+@media screen and (max-width: 479px) {
+  .c-footer__btn2::before {
+    left: 27px;
+  }
+}
+.c-footer__btn2:hover::before {
+  background-image: url(../img/common/footer-contact-hover.svg);
+}
+@media screen and (max-width: 479px) {
+  .c-footer__btn2 {
+    margin: 0 auto;
+  }
+}
+
+.c-ttl {
+  position: relative;
+  font-size: 20px;
+  letter-spacing: 1.6px;
+  display: inline-block;
+  padding: 0 85px;
+}
+@media screen and (max-width: 479px) {
+  .c-ttl {
+    padding: 0 64px;
+  }
+}
+.c-ttl:before, .c-ttl:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  width: 65px;
+  height: 20px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/title-deco.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.c-ttl:before {
+  left: 0;
+}
+.c-ttl:after {
+  right: 0;
+}
+
+.c-top__subttl {
+  font-size: 11px;
+  color: #1391E6;
+  letter-spacing: 1.1px;
+}
+@media screen and (min-width: 1100px) {
+  .c-top__subttl {
+    margin-top: 35px;
+  }
+}
+
+.c-subttl1 h2,
+.c-subttl2 h2 {
+  text-align: left;
+  padding-bottom: 8px;
+  border-bottom: solid 1px #707070;
+}
+
+.c-subttl1:first-child {
+  margin-top: 20px;
+}
+.c-subttl1 h2 {
+  margin-bottom: 16px;
+}
+
+.c-subttl2:first-child {
+  margin-top: 60px;
+}
+.c-subttl2 h2 {
+  margin-bottom: 40px;
+}
+
+.c-subttl3__1,
+.c-subttl3__2,
+.c-subttl3__3 {
+  padding-left: 30px;
+  position: relative;
+}
+.c-subttl3__1 h2,
+.c-subttl3__2 h2,
+.c-subttl3__3 h2 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+.c-subttl3__1::before,
+.c-subttl3__2::before,
+.c-subttl3__3::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+.c-subttl3__1::after,
+.c-subttl3__2::after,
+.c-subttl3__3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -8px;
+  width: 100%;
+  height: 1px;
+  background-color: #707070;
+}
+
+.c-subttl3__1::before {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/sidebar-icon_1.png);
+}
+
+.c-subttl3__2::before {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/sidebar-icon_2.png);
+}
+
+.c-subttl3__3::before {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/sidebar-icon_3.png);
+}
+
+.c-about__subttl {
+  font-size: 11px;
+  color: #1391E6;
+  letter-spacing: 1.1px;
+  text-align: left;
+}
+@media screen and (min-width: 1100px) {
+  .c-about__subttl {
+    margin-top: 35px;
+  }
+}
+
+.c-top__btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #1391E6;
+  background: #FFFFFF;
+  font-size: 14px;
+  padding: 10px 40px;
+  border-radius: 21.5px;
+  transition: all 0.5s;
+  border: 1px solid #1391E6;
+  position: relative;
+}
+.c-top__btn:hover {
+  background: #1391E6;
+  color: #FFFFFF;
+}
+.c-top__btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 14px;
+  background-image: url(../img/トップ/arrow-right-blue.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 14px;
+  height: 14px;
+  transition: all 0.5s;
+}
+.c-top__btn:hover::before {
+  content: "";
+  background-image: url(../img/トップ/arrow-right-white.svg);
+  right: 10px;
+}
+@media screen and (max-width: 479px) {
+  .c-top__btn {
+    margin: 0 auto;
+  }
+}
+
+.p-sticky-notice {
+  background: rgba(216, 31, 50, 0.75);
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  letter-spacing: 0.1em;
+  z-index: 999;
+  pointer-events: none;
+  font-size: 12px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+@media screen and (min-width: 1100px) {
+  .p-sticky-notice {
+    font-size: 14px;
+  }
+}
+
+.p-drawer {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  background: inherit;
+  z-index: 42;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+@media screen and (min-width: 1100px) {
+  .p-drawer {
+    top: 20px;
+    right: 20px;
+  }
+}
+.p-drawer-logo .custom-logo {
+  width: 120%;
+}
+.p-drawer span {
+  width: 27px;
+  height: 2.25px;
+  background: #1391E6;
+  border-radius: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+  top: 50%;
+}
+.p-drawer span:nth-child(1) {
+  top: calc(50% - 4.5px - 3.375px);
+}
+.p-drawer span:nth-child(3) {
+  top: calc(50% + 4.5px + 3.375px);
+}
+.p-drawer.active span {
+  width: 27px;
+  height: 2.25px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+  top: 50%;
+}
+.p-drawer.active span:nth-of-type(1) {
+  transition: 0.5s ease-out;
+  transform: translate(-13px, -2px) rotate(45deg);
+}
+.p-drawer.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.p-drawer.active span:nth-of-type(3) {
+  transition: 0.5s ease-out;
+  transform: translate(-13px, -2px) rotate(-45deg);
+}
+.p-drawer-content {
+  top: 0px;
+  height: 100vh;
+  z-index: 40;
+  width: 100vw;
+  background: #0060A0;
+  color: #FFFFFF;
+  opacity: 0;
+  visibility: hidden;
+  transition: right 0.5s, opacity 0.5s;
+  pointer-events: none;
+  right: 0;
+  padding: 20px 15px;
+  position: fixed;
+}
+@media screen and (min-width: 1100px) {
+  .p-drawer-content {
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-drawer-content {
+    width: 100%;
+  }
+}
+.p-drawer-content.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.p-drawer-content .p-drawer-logo {
+  width: 120px;
+  padding: 10px 10px 0;
+}
+.p-drawer-content .p-drawer-nav {
+  padding: 40px 60px;
+}
+.p-drawer-content .p-drawer-nav .p-drawer-nav__items {
+  list-style: none;
+}
+.p-drawer-content .p-drawer-nav .p-drawer-nav__items li {
+  text-align: left;
+  border-top: dashed 1px #FFFFFF;
+  width: 100%;
+  padding: 18px 0;
+}
+.p-drawer-content .p-drawer-nav .p-drawer-nav__items li:last-child {
+  border-bottom: dashed 1px #FFFFFF;
+}
+.p-drawer-content .p-drawer-nav .p-drawer-nav__items li a {
+  font-size: 14px;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-left: 40px;
+}
+.p-drawer-content .p-drawer-nav .p-drawer-nav__items li a::after {
+  content: "";
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-right.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 14px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  z-index: 41;
+}
+.p-drawer-content .p-drawer-nav .p-drawer-nav__items li a span {
+  font-size: 14px;
+  padding-left: 40px;
+}
+.p-drawer-content .p-drawer-nav .p-drawer-nav__items li a img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+}
+.p-drawer-content-sns {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+@media screen and (min-width: 1100px) {
+  .p-drawer-content-sns {
+    margin-top: 56px;
+  }
+}
+.p-drawer-content-sns a {
+  width: 40px;
+  margin-right: 20px;
+}
+.p-drawer-content-sns a:last-child {
+  margin-right: 0;
+}
+.l-drawer-nav__home a, .l-drawer-nav__about a, .l-drawer-nav__medical a, .l-drawer-nav__staff a, .l-drawer-nav__blog a, .l-drawer-nav__contact a {
+  position: relative;
+}
+.l-drawer-nav__home a::before, .l-drawer-nav__about a::before, .l-drawer-nav__medical a::before, .l-drawer-nav__staff a::before, .l-drawer-nav__blog a::before, .l-drawer-nav__contact a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  transition: transform 0.3s;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 22px;
+  height: 22px;
+}
+.l-drawer-nav__home a::before {
+  background-image: url(../img/menu-sp-02/icon-01.svg);
+}
+.l-drawer-nav__about a::before {
+  background-image: url(../img/menu-sp-02/icon-02.svg);
+}
+.l-drawer-nav__medical a::before {
+  background-image: url(../img/menu-sp-02/icon-03.svg);
+}
+.l-drawer-nav__staff a::before {
+  background-image: url(../img/menu-sp-02/icon-04.svg);
+}
+.l-drawer-nav__blog a::before {
+  background-image: url(../img/menu-sp-02/icon-05.svg);
+}
+.l-drawer-nav__contact a::before {
+  background-image: url(../img/menu-sp-02/icon-07.svg);
+}
+
+.p-top__medical {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.p-top__medical-items {
+  margin-top: 60px;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__medical-items {
+    display: flex;
+    justify-content: center;
+    height: 290px;
+  }
+}
+.p-top__medical-bottom-txt {
+  padding: 40px;
+  background: #FFFFFF;
+  margin-top: 40px;
+  text-align: left;
+}
+
+.p-top__medical-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20pt;
+  height: 210px;
+}
+@media screen and (max-width: 479px) {
+  .p-top__medical-item:first-child {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__medical-item {
+    height: 290px;
+  }
+  .p-top__medical-item:first-child {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-top__medical-item {
+    height: 290px;
+    width: calc(50% - 40px);
+    margin-right: 80px;
+  }
+  .p-top__medical-item:last-child {
+    margin-right: 0;
+  }
+}
+.p-top__medical-item::before, .p-top__medical-item::after {
+  content: "";
+  position: absolute;
+  transition: all 0.5s;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.p-top__medical-item::before {
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.p-top__medical-item:nth-child(1)::before {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bofu-shaw-Dqrlp6cMLkE-unsplash-1.png);
+}
+.p-top__medical-item:nth-child(2)::before {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bofu-shaw-Dqrlp6cMLkE-unsplash.png);
+}
+.p-top__medical-item::after {
+  background: rgba(0, 0, 0, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.p-top__medical-item:hover::before {
+  transform: scale(1.1);
+}
+.p-top__medical-item:hover::after {
+  background: rgba(0, 0, 0, 0.4);
+}
+.p-top__medical-item-line {
+  border-radius: 20px;
+  height: calc(100% - 20px);
+  margin: 10px;
+  position: relative;
+  transition: 0.1s ease-out;
+  width: calc(100% - 20px);
+  z-index: 1;
+}
+.p-top__medical-item-line:hover {
+  border: solid 2px #FFFFFF;
+}
+.p-top__medical-item-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  color: #FFFFFF;
+}
+.p-top__medical-item-head {
+  font-size: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__medical-item-head {
+    font-size: 28px;
+  }
+}
+.p-top__medical-item-head::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background: #FFFFFF;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+@media screen and (min-width: 1100px) {
+  .p-top__medical-item-head::before {
+    width: 40px;
+  }
+}
+.p-top__medical-item-txt {
+  margin-top: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__medical-item-txt {
+    font-size: 14px;
+  }
+}
+
+.p-top__blog {
+  text-align: center;
+}
+.p-top__blog-btn {
+  text-align: center;
+}
+.p-top__blog-items {
+  margin: 60px 0 40px;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__blog-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__blog-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+.p-top__blog-item {
+  position: relative;
+  min-width: 0;
+  display: block;
+  border-radius: 20px;
+}
+.p-top__blog-item:hover .p-top__blog-item-img > img {
+  transform: scale(1.05);
+}
+@media screen and (min-width: 1100px) {
+  .p-top__blog-item {
+    width: calc(33.3333333333% - 33.3333333333px);
+    margin: 0px 50px 50px 0;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  }
+  .p-top__blog-item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__blog-item {
+    width: calc(50% - 15px);
+    margin: 0px 30px 30px 0;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  }
+  .p-top__blog-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-top__blog-item {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  .p-top__blog-item:last-child {
+    margin-bottom: 0;
+  }
+}
+.p-top__blog-item-label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #EE5A6D;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 35px;
+  font-size: 10px;
+  z-index: 1;
+}
+@media screen and (max-width: 479px) {
+  .p-top__blog-item-label {
+    top: 5px;
+    left: 5px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-top__blog-item-label {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+  }
+}
+.p-top__blog-item-img {
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  z-index: -1;
+}
+@media screen and (max-width: 479px) {
+  .p-top__blog-item-img {
+    width: 130px;
+    flex-shrink: 0;
+  }
+}
+.p-top__blog-item-img > img {
+  transition: transform 0.4s;
+}
+.p-top__blog-item-img img {
+  z-index: -1;
+  width: 100%;
+}
+@media screen and (max-width: 479px) {
+  .p-top__blog-item-img img {
+    height: 100px;
+  }
+}
+.p-top__blog-item-body {
+  text-align: left;
+  padding: 24px 24px 10px 24px;
+  position: relative;
+}
+@media screen and (max-width: 479px) {
+  .p-top__blog-item-body {
+    padding: 8px 10px;
+  }
+}
+.p-top__blog-item-category {
+  display: inline-block;
+  font-size: 11px;
+  background: #1391E6;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 14px;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__blog-item-category {
+    position: absolute;
+    top: -15px;
+    left: 24px;
+    font-size: 11px;
+    background: #1391E6;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 14px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__blog-item-category {
+    position: absolute;
+    top: -15px;
+    left: 24px;
+    font-size: 11px;
+    background: #1391E6;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 14px;
+  }
+}
+.p-top__blog-item-txt {
+  text-align: left;
+}
+@media screen and (max-width: 479px) {
+  .p-top__blog-item-txt {
+    font-size: 14px;
+  }
+}
+.p-top__blog-item-date {
+  text-align: left;
+  color: #888888;
+  font-size: 11px;
+  padding-top: 5px;
+}
+
+.p-top__concept {
+  text-align: left;
+  z-index: 1;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__concept-items {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__concept-items {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-top__concept-body {
+    padding: 0 15px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-top__concept-body {
+    margin-right: 150px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__concept-body {
+    margin-right: 60px;
+  }
+}
+.p-top__concept-head {
+  font-size: 20px;
+  text-align: left;
+  margin: 16px 0 32px;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__concept-head {
+    margin: 28px 0 40px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__concept-head {
+    margin: 28px 0 40px;
+  }
+}
+.p-top__concept-txt {
+  text-align: left;
+  font-size: 14px;
+}
+.p-top__concept-btn {
+  margin-top: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__concept-btn {
+    margin-top: 80px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__concept-btn {
+    margin-top: 60px;
+  }
+}
+.p-top__concept-img {
+  margin-right: 40px;
+}
+@media screen and (max-width: 479px) {
+  .p-top__concept-img {
+    margin-top: 50px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-top__concept-img {
+    margin-right: 95px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__concept-img {
+    margin-right: 80px;
+  }
+}
+
+.p-top__recommend {
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__recommend {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+.p-top__recommend-items {
+  margin-top: 60px;
+}
+@media screen and (min-width: 1100px) {
+  .p-top__recommend-items {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-top__recommend-item {
+    width: calc(33.3333333333% - 40px);
+    margin: 0px 60px 20px 0;
+  }
+  .p-top__recommend-item:last-child {
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-top__recommend-item {
+    width: 80%;
+    margin: 0 auto 60px;
+  }
+  .p-top__recommend-item:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-top__recommend-item {
+    width: 80%;
+    margin: 0 auto 60px;
+  }
+  .p-top__recommend-item:last-child {
+    margin-bottom: 0;
+  }
+}
+.p-top__recommend-txt {
+  font-size: 14px;
+  text-align: left;
+}
+.p-about__concept {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.p-about__concept::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 150%;
+  height: 308px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/concept-bg-1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top left;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept::before {
+    margin-left: 416px;
+    height: 725px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-about__concept::before {
+    margin-left: 416px;
+    height: 725px;
+  }
+}
+.p-about__concept-items {
+  padding-top: 150px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-items {
+    padding-top: 240px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-item1 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+.p-about__concept-item1 .p-about__concept-body {
+  padding: 0 15px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-item1 .p-about__concept-body {
+    margin-right: 150px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-about__concept-item1 .p-about__concept-body {
+    padding: 0 50px;
+  }
+}
+.p-about__concept-item1 .p-about__concept-img {
+  margin-top: 50px;
+  margin-right: 40px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-item1 .p-about__concept-img {
+    margin-right: 95px;
+    width: 640px;
+    flex-shrink: 0;
+  }
+}
+.p-about__concept-item2 {
+  padding-top: 100px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-item2 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 267px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-about__concept-item2 .p-about__concept-body {
+    padding: 0 15px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-item2 .p-about__concept-body {
+    margin-left: 150px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-about__concept-item2 .p-about__concept-body {
+    padding: 0 50px;
+  }
+}
+.p-about__concept-item2 .p-about__concept-img {
+  margin-top: 50px;
+  margin-left: 40px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-item2 .p-about__concept-img {
+    margin-left: 95px;
+    width: 640px;
+    flex-shrink: 0;
+  }
+}
+.p-about__concept-head {
+  font-size: 20px;
+  text-align: left;
+  margin: 16px 0 32px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-head {
+    margin: 28px 0 40px;
+  }
+}
+.p-about__concept-txt {
+  text-align: left;
+  font-size: 14px;
+}
+.p-about__concept-btn {
+  margin-top: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__concept-btn {
+    margin-top: 80px;
+  }
+}
+
+.p-about__gallery {
+  z-index: 1;
+  z-index: 0;
+  text-align: center;
+}
+.p-about__gallery-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 45px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__gallery-items {
+    margin-top: 60px;
+  }
+}
+.p-about__gallery-items img {
+  z-index: 0;
+  width: calc(33.3333333333% - 10px);
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+@media screen and (min-width: 1100px) {
+  .p-about__gallery-items img {
+    width: calc(33.3333333333% - 16px);
+    margin-right: 24px;
+    margin-bottom: 24px;
+  }
+}
+.p-about__gallery-items img:nth-child(3n) {
+  margin-right: 0;
+}
+
+.p-medical {
+  background: #DFF1FD;
+}
+.p-medical__ttl {
+  text-align: center;
+}
+.p-medical__main-item {
+  margin-bottom: 80px;
+}
+.p-medical__main-item:last-child {
+  margin-bottom: 0;
+}
+.p-medical__main-ttl-wrap {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.p-medical__main-ttl {
+  font-size: 28px;
+}
+@media screen and (max-width: 479px) {
+  .p-medical__main-ttl {
+    font-size: 20px;
+  }
+}
+.p-medical__main-subttl1, .p-medical__main-subttl2 {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 24px;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 1.12px;
+  margin-left: 24px;
+  vertical-align: middle;
+}
+.p-medical__main-subttl1 {
+  background: #1391E6;
+}
+.p-medical__main-subttl2 {
+  background: #EE5A6D;
+}
+@media screen and (max-width: 479px) {
+  .p-medical__main-btn-wrap {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-medical__main-btn-wrap {
+    display: flex;
+    justify-content: left;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-medical__main-btn-wrap {
+    display: flex;
+    justify-content: left;
+  }
+}
+.p-medical__main-btn {
+  border: solid 2px #1391E6;
+  background: #FFFFFF;
+  border-radius: 12px;
+}
+.p-medical__main-btn:last-child {
+  margin-right: 0px;
+}
+@media screen and (min-width: 1100px) {
+  .p-medical__main-btn {
+    padding: 20px 32px;
+    margin-right: 16px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-medical__main-btn {
+    padding: 20px 12px;
+    margin-right: 16px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-medical__main-btn {
+    padding: 16px 0;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .p-medical__main-btn:last-child {
+    margin-bottom: 0px;
+  }
+}
+.p-medical__main-link {
+  color: #1391E6;
+}
+@media screen and (max-width: 479px) {
+  .p-medical__items {
+    padding: 0 20px 100px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-medical__item {
+    width: 100%;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin-top: 40px;
+    padding: 24px 20px 20px 20px;
+  }
+  .p-medical__item-top {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #C2C2C2;
+    margin-bottom: 20px;
+  }
+  .p-medical__item-ttlwrap {
+    text-align: left;
+  }
+  .p-medical__item-head {
+    font-size: 20px;
+    letter-spacing: 1.6px;
+    margin-bottom: 20px;
+  }
+  .p-medical__item-lead {
+    color: #1391E6;
+    font-size: 14px;
+  }
+  .p-medical__item-label {
+    position: absolute;
+    top: -24px;
+    right: 5px;
+    width: 80px;
+    height: 60px;
+  }
+  .p-medical__item-text {
+    font-size: 14px;
+  }
+  .p-medical__item-img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-medical__item {
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 20px;
+    margin-top: 40px;
+    padding: 24px 30px 30px 30px;
+  }
+  .p-medical__item-top {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #C2C2C2;
+    margin-bottom: 20px;
+  }
+  .p-medical__item-ttlwrap {
+    text-align: left;
+  }
+  .p-medical__item-head {
+    font-size: 20px;
+    letter-spacing: 1.6px;
+    margin-bottom: 20px;
+  }
+  .p-medical__item-lead {
+    color: #1391E6;
+    font-size: 14px;
+  }
+  .p-medical__item-label {
+    position: absolute;
+    top: -24px;
+    right: 5px;
+    width: 80px;
+    height: 60px;
+  }
+  .p-medical__item-text {
+    font-size: 14px;
+  }
+  .p-medical__item-img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-medical__item {
+    width: 1000px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 55px 60px 60px 60px;
+    margin-top: 40px;
+  }
+  .p-medical__item:first-child {
+    margin-top: 60px;
+  }
+  .p-medical__item-top {
+    position: relative;
+    padding-bottom: 40px;
+    border-bottom: solid 1px #C2C2C2;
+    margin-bottom: 40px;
+  }
+  .p-medical__item-ttlwrap {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  .p-medical__item-head {
+    font-size: 28px;
+    letter-spacing: 2.24px;
+  }
+  .p-medical__item-lead {
+    margin-left: 40px;
+    color: #1391E6;
+    font-size: 14px;
+  }
+  .p-medical__item-label {
+    position: absolute;
+    top: -55px;
+    right: 20px;
+    width: 100px;
+    height: 80px;
+  }
+  .p-medical__item-body {
+    display: flex;
+    justify-content: space-between;
+  }
+  .p-medical__item-text {
+    font-size: 14px;
+  }
+  .p-medical__item-img {
+    min-width: 420px;
+    margin-left: 40px;
+  }
+}
+
+.first {
+  margin-top: 60px !important;
+}
+
+.p-bg-item1,
+.p-bg-item2,
+.p-bg-item3 {
+  position: relative;
+  z-index: 1;
+}
+
+.p-bg-item1 {
+  height: 15.70313vw;
+  width: 100%;
+}
+.p-bg-item1::before {
+  content: "";
+  z-index: -1;
+  height: inherit;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: inherit;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bg-top.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.p-bg-item2 {
+  height: 7.57812vw;
+  width: 100%;
+}
+.p-bg-item2::before {
+  content: "";
+  z-index: -1;
+  height: inherit;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: inherit;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bg-bottom.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.p-bg-item3::after, .p-bg-item3::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  bottom: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@media screen and (min-width: 1100px) {
+  .p-bg-item3::after, .p-bg-item3::before {
+    bottom: 100px;
+  }
+}
+.p-bg-item3::before {
+  left: 15px;
+  height: 40px;
+  width: 40px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/deco-kirakira2-w.png);
+}
+@media screen and (min-width: 1100px) {
+  .p-bg-item3::before {
+    height: 52px;
+    width: 52px;
+    left: 30px;
+  }
+}
+.p-bg-item3::after {
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/deco-kirakira-w.png);
+}
+@media screen and (min-width: 1100px) {
+  .p-bg-item3::after {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+.p-footer-info__left {
+  text-align: center;
+}
+@media screen and (min-width: 1100px) {
+  .p-footer-info__left {
+    margin-right: 40px;
+  }
+}
+.p-footer-info__address {
+  margin: 8px 0 20px;
+}
+@media screen and (max-width: 479px) {
+  .p-footer-info__address {
+    font-size: 13px;
+  }
+}
+.p-footer-info__address span {
+  margin-left: 20px;
+}
+.p-footer-info__tel {
+  color: #1391E6;
+  font-size: 32px;
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+}
+.p-footer-info__tel::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 25px;
+  width: 25px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon_tel.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top top;
+  left: -5px;
+}
+.p-footer-info__time {
+  color: #1391E6;
+  font-size: 12px;
+}
+.p-footer-info__btn {
+  margin: 20px auto 0px;
+}
+@media screen and (max-width: 479px) {
+  .p-footer-info__btn {
+    text-align: center;
+  }
+}
+.p-footer-info__btn .p-footer-info__link {
+  display: inline-block;
+  margin-left: 10px;
+}
+.p-footer-info__btn .p-footer-info__link:first-child {
+  margin-left: 0px;
+}
+@media screen and (min-width: 1100px) {
+  .p-footer-info__btn .p-footer-info__link {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-footer-info__btn .p-footer-info__link {
+    margin-bottom: 10px;
+    margin-left: 0px;
+  }
+  .p-footer-info__btn .p-footer-info__link:last-child {
+    margin-bottom: 0;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-footer-info__right {
+    margin-top: 20px;
+  }
+  .p-footer-info__right iframe {
+    width: 100% !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-footer-info__right {
+    margin-top: 20px;
+  }
+  .p-footer-info__right iframe {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .p-footer {
+    padding-bottom: 63px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-footer {
+    padding-bottom: 40px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-footer__nav {
+    padding-bottom: 40px;
+  }
+  .p-footer__nav:last-child {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-footer__nav {
+    margin-bottom: 50px;
+  }
+  .p-footer__nav:last-child {
+    margin-bottom: 0px;
+  }
+}
+.p-footer__nav .p-footer__nav-subitem {
+  display: flex;
+}
+.p-footer__nav .p-footer__nav-subitem .p-footer__nav-sub {
+  margin-right: 37px;
+}
+.p-footer__nav .p-footer__nav-subitem .p-footer__nav-sub:last-child {
+  margin-right: 0px;
+}
+.p-footer__nav .p-footer__nav-sub {
+  display: flex;
+  flex-direction: column;
+}
+.p-footer__nav .p-footer__nav-sub .p-footer__nav-sublink {
+  padding-top: 20px;
+}
+.p-footer__nav .p-footer__nav-sub .p-footer__nav-sublink a {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+.p-footer__nav .p-footer__nav-sub .p-footer__nav-sublink a::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  height: 17px;
+  width: 17px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/Icon-ionic-md-arrow-dropright.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top top;
+}
+.p-footer__copylight {
+  padding: 18px 0 80px;
+  color: #FFFFFF;
+  text-align: center;
+  background: #1391E6;
+}
+@media screen and (min-width: 1100px) {
+  .p-footer__copylight {
+    padding: 18px 0;
+  }
+}
+
+.p-footer__sp-btn-reserve {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  bottom: 0;
+  justify-content: space-between;
+  padding: 0 5px;
+  border-top: solid 1px #1391E6;
+  height: 60px;
+  width: 100vw;
+  background: #FFFFFF;
+  z-index: 30;
+}
+.p-footer__sp-btn-reserve-left {
+  text-align: center;
+}
+.p-footer__sp-btn-reserve-right {
+  padding: 6px 20px 6px 50px;
+  background: #1391E6;
+  border-radius: 8pt;
+  margin: 6px 0 6px auto;
+}
+.p-footer__sp-btn-reserve-right a {
+  position: relative;
+  z-index: 30;
+  display: inline-block;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 1;
+}
+.p-footer__sp-btn-reserve-right a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -41px;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 43px;
+  background-image: url(../img/トップ/sp/icon-sp.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top top;
+}
+.p-footer__sp-btn-reserve-right a span {
+  font-size: 12px;
+  line-height: 1.25;
+}
+.p-footer__sp-btn-reserve-tel {
+  font-size: 20px;
+  color: #1391E6;
+  padding-left: 25px;
+  position: relative;
+}
+.p-footer__sp-btn-reserve-tel::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 43px;
+  background-image: url(../img/トップ/sp/icon_tel.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top top;
+}
+.p-footer__sp-btn-reserve-time {
+  font-size: 10px;
+}
+
+.p-blog {
+  text-align: center;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1100px) {
+  .p-blog {
+    width: 680px;
+    flex-shrink: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-blog {
+    width: 480px;
+    flex-shrink: 0;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-blog {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
+.p-blog__btn {
+  text-align: center;
+}
+.p-blog__items {
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 479px) {
+  .p-blog__items {
+    margin-bottom: 60px;
+  }
+}
+.p-blog__item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.p-blog__item:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 1100px) {
+  .p-blog__item {
+    margin: 60px 0 40px;
+  }
+  .p-blog__item:first-child {
+    margin: 0px 0 40px;
+  }
+}
+.p-blog__item:hover .p-blog__item-img > img {
+  transform: scale(1.05);
+}
+.p-blog__item-wrap {
+  position: relative;
+}
+.p-blog__item-label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #EE5A6D;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 35px;
+  font-size: 10px;
+}
+@media screen and (max-width: 479px) {
+  .p-blog__item-label {
+    top: 5px;
+    left: 5px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-blog__item-label {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+  }
+}
+.p-blog__item-img {
+  width: 240px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+@media screen and (max-width: 479px) {
+  .p-blog__item-img {
+    width: 130px;
+    flex-shrink: 0;
+  }
+}
+.p-blog__item-img > img {
+  transition: transform 0.4s;
+}
+@media screen and (max-width: 479px) {
+  .p-blog__item-img img {
+    height: 100px;
+  }
+}
+.p-blog__item-body {
+  text-align: left;
+  padding: 24px 24px 10px 24px;
+  position: relative;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-blog__item-body {
+    padding: 24px 0px 10px 10px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-blog__item-body {
+    padding: 8px 10px;
+  }
+}
+.p-blog__item-category {
+  display: inline-block;
+  font-size: 11px;
+  background: #1391E6;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 14px;
+}
+@media screen and (min-width: 1100px) {
+  .p-blog__item-category {
+    position: absolute;
+    top: -15px;
+    left: 24px;
+    font-size: 11px;
+    background: #1391E6;
+    color: #FFFFFF;
+    padding: 6px 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-blog__item-category {
+    position: absolute;
+    top: -15px;
+    left: 24px;
+    font-size: 11px;
+    background: #1391E6;
+    color: #FFFFFF;
+    padding: 6px 12px;
+  }
+}
+.p-blog__item-txt {
+  text-align: left;
+  font-size: 16px;
+}
+@media screen and (max-width: 479px) {
+  .p-blog__item-txt {
+    font-size: 14px;
+  }
+}
+.p-blog__item-date {
+  text-align: left;
+  color: #888888;
+  font-size: 11px;
+  padding-top: 5px;
+}
+
+.p-single__body {
+  position: relative;
+}
+.p-single__meta {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 30px;
+}
+.p-single__ttl {
+  font-size: 20px;
+  text-align: left;
+  letter-spacing: 1.6px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 1100px) {
+  .p-single__ttl {
+    margin-bottom: 18px;
+    font-size: 28px;
+    letter-spacing: 2.24px;
+    line-height: 1.4285714286;
+  }
+}
+.p-single__date {
+  color: #1391E6;
+  position: relative;
+}
+.p-single__date::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -30px;
+  height: 20px;
+  width: 20px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-time.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top top;
+}
+.p-single__item-category {
+  display: inline-block;
+  font-size: 11px;
+  background: #1391E6;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 14px;
+  margin-left: 32px;
+}
+@media screen and (min-width: 1100px) {
+  .p-single__item-category {
+    font-size: 11px;
+    background: #1391E6;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 14px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-single__item-category {
+    position: absolute;
+    top: -15px;
+    left: 24px;
+    font-size: 11px;
+    background: #1391E6;
+    color: #FFFFFF;
+    padding: 6px 12px;
+    border-radius: 14px;
+  }
+}
+.p-single-content {
+  margin-top: 63px;
+}
+.p-single-content h1,
+.p-single-content h2,
+.p-single-content h3,
+.p-single-content h4 {
+  color: #1391E6;
+}
+.p-single-content h2 {
+  font-size: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+@media screen and (min-width: 1100px) {
+  .p-single-content h2 {
+    font-size: 24px;
+  }
+}
+.p-single-content h2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  background: #1391E6;
+  width: 8px;
+  height: 32px;
+}
+.p-single-content h3 {
+  border-bottom: solid 1px #1391E6;
+  padding-bottom: 7px;
+  font-size: 16px;
+}
+@media screen and (min-width: 1100px) {
+  .p-single-content h3 {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-single-content h4 {
+    font-size: 16px;
+  }
+}
+.p-single-content a {
+  color: #1391E6;
+  text-decoration: underline;
+}
+.p-single-content a:hover {
+  text-decoration: none;
+}
+.p-single__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 100px;
+}
+@media screen and (min-width: 1100px) {
+  .p-single__btn {
+    margin: 108px 0 0;
+  }
+}
+.p-single__btn-center {
+  color: #1391E6;
+  padding: 8px 17px;
+  background: #FFFFFF;
+  border-radius: 4px;
+  border: solid 1px #1391E6;
+  margin: 0 12px;
+}
+@media screen and (min-width: 1100px) {
+  .p-single__btn-center {
+    margin: 0 20px;
+  }
+}
+.p-single__btn-prev, .p-single__btn-next {
+  position: relative;
+  color: #FFFFFF;
+  background: #1391E6;
+  border-radius: 4px;
+  z-index: 1;
+}
+.p-single__btn-prev::before, .p-single__btn-next::before {
+  content: "";
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top top;
+}
+.p-single__btn-prev {
+  padding: 8px 16px 8px 35px;
+}
+.p-single__btn-prev::before {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-circle-left.png);
+  left: 8px;
+}
+.p-single__btn-next {
+  padding: 8px 35px 8px 16px;
+}
+.p-single__btn-next::before {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-circle-right.png);
+  right: 8px;
+}
+
+.p-sidebar {
+  width: 100%;
+  position: relative;
+}
+@media screen and (min-width: 1100px) {
+  .p-sidebar {
+    margin-left: 30px;
+  }
+}
+.p-sidebar__content {
+  margin: 0 auto 60px 0;
+  background-color: #FFFFFF;
+}
+.p-sidebar__content:last-child {
+  margin: 0 auto 0px 0;
+}
+.p-sidebar__item-ttl {
+  margin: 20px 0 14px;
+  font-size: 16px;
+}
+.p-sidebar__item-txt {
+  margin-bottom: 14px;
+}
+.p-sidebar__item-link {
+  color: #1391E6;
+  position: relative;
+}
+.p-sidebar__item-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -20px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/sidebar-arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+.p-sidebar__archicle {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 20px;
+}
+.p-sidebar__archicle:last-child {
+  margin-bottom: 0;
+}
+.p-sidebar__archicle-img {
+  width: 120px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 479px) {
+  .p-sidebar__archicle-img img {
+    height: 100px;
+  }
+}
+.p-sidebar__archicle-body {
+  text-align: left;
+  margin-left: 10px;
+}
+.p-sidebar__archicle-category {
+  display: inline-block;
+  font-size: 11px;
+  background: #1391E6;
+  color: #FFFFFF;
+  padding: 3px 9px;
+  border-radius: 14px;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+.p-sidebar__archicle-txt {
+  text-align: left;
+  line-height: 1.4285714286;
+}
+.p-sidebar__archicle-date {
+  text-align: left;
+  color: #888888;
+  font-size: 11px;
+  padding-top: 5px;
+}
+.p-sidebar__list {
+  margin-left: 20px;
+}
+.p-sidebar__list li {
+  margin-bottom: 17px;
+  padding-left: 20px;
+}
+.p-sidebar__list li:last-child {
+  margin-bottom: 0;
+}
+.p-sidebar__list li a {
+  position: relative;
+}
+.p-sidebar__list li a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -20px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/Icon-ionic-md-arrow-dropright.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 15px;
+  height: 15px;
+}
+
+@media screen and (min-width: 1100px) {
+  .p-thanks {
+    width: 730px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-thanks {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-thanks {
+    padding: 0 20px;
+  }
+}
+.p-thanks__contact, .p-thanks__reservation {
+  margin: 80px 0 160px;
+  text-align: left;
+}
+@media screen and (max-width: 479px) {
+  .p-thanks__contact, .p-thanks__reservation {
+    margin: 60px 0 100px;
+  }
+}
+.p-contact__ttl {
+  margin: 100px 0 70px;
+  text-align: center;
+}
+@media screen and (min-width: 1100px) {
+  .p-contact__ttl {
+    margin: 160px 0 60px;
+  }
+}
+.p-contact__list {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 1100px) {
+  .p-contact__list {
+    margin-bottom: 72px;
+  }
+}
+.p-contact__item {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px #DDDDDD;
+}
+.p-contact__item:first-child {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: solid 1px #DDDDDD;
+}
+.p-contact__item:last-child {
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 1100px) {
+  .p-contact__item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+}
+.p-contact__item-ttl {
+  vertical-align: middle;
+  display: inline-block;
+  width: 130px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 479px) {
+  .p-contact__item-ttl {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-contact__item-ttl {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-contact__item-ttl {
+    margin-right: 112px;
+  }
+}
+.p-contact__item-txt {
+  position: relative;
+  display: inline;
+  font-size: 16px;
+}
+.p-contact__item-label {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  display: inline-block;
+  font-size: 12px;
+  width: 32px;
+  height: 23px;
+  background: #EE5A6D;
+  color: #FFFFFF;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+.p-contact__item-input {
+  width: 100%;
+}
+.p-contact__item-input input,
+.p-contact__item-input textarea {
+  width: 100%;
+  background: #F6F6F6;
+  padding: 13px 16px;
+  border-radius: 4px;
+  border-style: none;
+}
+.p-contact__item-input textarea {
+  height: 200px;
+  resize: vertical;
+}
+.p-contact__submit {
+  text-align: center;
+}
+.p-contact__submit-btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #1391E6;
+  border: solid 1px #1391E6;
+  background: #FFFFFF;
+  font-size: 14px;
+  border-radius: 30px;
+  transition: 0.3s;
+  padding: 10px 115px;
+}
+@media screen and (min-width: 1100px) {
+  .p-contact__submit-btn {
+    padding: 17px 155px;
+  }
+}
+.p-contact__submit-btn:hover {
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 479px) {
+  .p-contact__submit-btn {
+    margin: 0 auto;
+  }
+}
+
+.p-reservation__top {
+  margin-bottom: 160px;
+}
+@media screen and (max-width: 479px) {
+  .p-reservation__top {
+    margin-bottom: 100px;
+  }
+}
+.p-reservation__tel {
+  text-align: center;
+  text-align: left;
+  padding-bottom: 42px;
+}
+.p-reservation__tel-ttl {
+  font-size: 28px;
+  color: #393939;
+  margin-bottom: 28px;
+  letter-spacing: 2.24px;
+  text-align: left;
+}
+@media screen and (max-width: 479px) {
+  .p-reservation__tel-ttl {
+    font-size: 20px;
+  }
+}
+.p-reservation__tel-txt {
+  font-size: 32px;
+  color: #1391E6;
+  position: relative;
+  padding-left: 24px;
+}
+.p-reservation__tel-txt::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon_tel.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+.p-reservation__tel-time {
+  font-size: 12px;
+  color: #1391E6;
+  padding-left: 24px;
+}
+.p-reservation__ttl {
+  text-align: center;
+  margin-bottom: 65px;
+}
+.p-reservation__mail {
+  text-align: center;
+}
+.p-reservation__mail-ttl {
+  font-size: 28px;
+  color: #393939;
+  margin-bottom: 28px;
+  letter-spacing: 2.24px;
+  text-align: left;
+}
+@media screen and (max-width: 479px) {
+  .p-reservation__mail-ttl {
+    font-size: 20px;
+  }
+}
+.p-reservation__mail-txt {
+  text-align: left;
+}
+.p-reservation__list {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 1100px) {
+  .p-reservation__list {
+    margin-bottom: 72px;
+  }
+}
+.p-reservation__radio .p-reservation__radio-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em 2em;
+  border: none;
+}
+.p-reservation__radio .p-reservation__radio-input label {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5em;
+  position: relative;
+  cursor: pointer;
+}
+.p-reservation__radio .p-reservation__radio-input label::before,
+.p-reservation__radio .p-reservation__radio-input label:has(:checked)::after {
+  border-radius: 50%;
+  content: "";
+}
+.p-reservation__radio .p-reservation__radio-input label::before {
+  width: 24px;
+  height: 24px;
+  border: solid 1px #1391E6;
+  background: #FFFFFF;
+}
+.p-reservation__radio .p-reservation__radio-input label:has(:checked)::after {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #2589d0;
+  animation: anim-radio-001 0.3s linear;
+}
+@keyframes anim-radio-001 {
+  0% {
+    box-shadow: 0 0 0 1px transparent;
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 137, 208, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+.p-reservation__radio .p-reservation__radio-input input {
+  display: none;
+}
+.p-reservation__submit {
+  text-align: center;
+}
+.p-reservation__submit-btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #1391E6;
+  border: solid 1px #1391E6;
+  background: #FFFFFF;
+  font-size: 14px;
+  border-radius: 30px;
+  transition: 0.3s;
+  padding: 10px 115px;
+}
+@media screen and (min-width: 1100px) {
+  .p-reservation__submit-btn {
+    padding: 17px 155px;
+  }
+}
+.p-reservation__submit-btn:hover {
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+}
+@media screen and (max-width: 479px) {
+  .p-reservation__submit-btn {
+    margin: 0 auto;
+  }
+}
+
+.p-reservation__item {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid 1px #DDDDDD;
+}
+.p-reservation__item:first-child {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: solid 1px #DDDDDD;
+}
+.p-reservation__item:last-child {
+  margin-bottom: 0px;
+}
+@media screen and (min-width: 1100px) {
+  .p-reservation__item {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+}
+.p-reservation__item-ttl {
+  vertical-align: middle;
+  display: inline-block;
+  width: 130px;
+  flex-shrink: 0;
+}
+@media screen and (max-width: 479px) {
+  .p-reservation__item-ttl {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-reservation__item-ttl {
+    margin-bottom: 15px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-reservation__item-ttl {
+    margin-right: 112px;
+  }
+}
+.p-reservation__item-txt {
+  position: relative;
+  display: inline;
+  font-size: 16px;
+}
+.p-reservation__item-label {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  display: inline-block;
+  font-size: 12px;
+  width: 32px;
+  height: 23px;
+  background: #EE5A6D;
+  color: #FFFFFF;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+.p-reservation__item-input {
+  width: 100%;
+}
+.p-reservation__item-input input,
+.p-reservation__item-input textarea {
+  width: 100%;
+  background: #F6F6F6;
+  padding: 13px 16px;
+  border-radius: 4px;
+  border-style: none;
+}
+.p-reservation__item-input textarea {
+  height: 200px;
+  resize: vertical;
+}
+
+.p-reservation__item-input-radio {
+  display: flex;
+  flex-wrap: wrap;
+}
+.p-reservation__item-input-radio-wrap {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  /*リセット */
+  /* チェックボックスデザイン */
+}
+.p-reservation__item-input-radio-wrap label {
+  margin-left: 8px;
+}
+.p-reservation__item-input-radio-wrap input[type=checkbox] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.p-reservation__item-input-radio-wrap input[type=checkbox] {
+  cursor: pointer;
+  padding-left: 30px;
+  /*label手前にチェックボックス用の余白を開ける*/
+  vertical-align: middle;
+  position: relative;
+  width: auto;
+}
+.p-reservation__item-input-radio-wrap input[type=checkbox]::before,
+.p-reservation__item-input-radio-wrap input[type=checkbox]::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.p-reservation__item-input-radio-wrap input[type=checkbox]::before {
+  background-color: #FFFFFF;
+  border-radius: 0%;
+  border: 1px solid #1391E6;
+  width: 24px;
+  /*チェックボックスの横幅*/
+  height: 24px;
+  /*チェックボックスの縦幅*/
+  transform: translateY(-50%);
+  top: 50%;
+  left: 5px;
+}
+.p-reservation__item-input-radio-wrap input[type=checkbox]::after {
+  border-bottom: 1px solid #1391E6;
+  /*チェックの太さ*/
+  border-left: 1px solid #1391E6;
+  /*チェックの太さ*/
+  opacity: 0;
+  /*チェック前は非表示*/
+  height: 7px;
+  /*チェックの高さ*/
+  width: 13px;
+  /*チェックの横幅*/
+  transform: rotate(-45deg);
+  top: 5px;
+  /*チェック時の位置調整*/
+  left: 11px;
+  /*チェック時の位置調整*/
+}
+.p-reservation__item-input-radio-wrap input[type=checkbox]:checked::after {
+  opacity: 1;
+  /*チェック後表示*/
+}
+
+.p-reservation__item-input-select .selectbox-003 {
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+.p-reservation__item-input-select .selectbox-003::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/select-arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+.p-reservation__item-input-select .selectbox-003 select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  min-width: 100%;
+  height: 2.8em;
+  padding: 0.4em calc(0.8em + 30px) 0.4em 0.8em;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+  color: #333333;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.p-reservation__item-input-date input {
+  margin-bottom: 20px;
+}
+.p-reservation__item-input-date input:last-child {
+  margin-bottom: 0px;
+}
+
+.p__breadcrumbs {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+@media screen and (max-width: 479px) {
+  .p__breadcrumbs {
+    margin-left: 0px;
+  }
+}
+.p__breadcrumbs a {
+  color: #C2C2C2;
+}
+
+.pagination .nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 8px;
+  list-style-type: none;
+  padding: 0;
+}
+.pagination .nav-links .prev,
+.pagination .nav-links .next {
+  gap: 0 4px;
+  width: auto;
+  padding: 0.5em 0.8em;
+  line-height: 1;
+  color: #FFFFFF;
+  background: #1391E6;
+}
+.pagination .nav-links .prev::before {
+  background-image: url(../img/05/arrow-circle-left.svg);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  content: "";
+}
+.pagination .nav-links .next::after {
+  background-image: url(../img/05/arrow-circle-right.svg);
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  content: "";
+}
+.pagination .nav-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #1391E6;
+  border: 1px solid #1391E6;
+}
+.pagination .nav-links span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #1391E6;
+  border: 1px solid #1391E6;
+}
+.pagination .nav-links .current {
+  background-color: #1391E6;
+  color: #FFFFFF;
+  pointer-events: none;
+}
+.pagination .nav-links a:not(:hover) {
+  text-decoration: none;
+}
+
+.p-fv {
+  margin: 0px 60px 15px;
+  position: relative;
+}
+@media screen and (max-width: 479px) {
+  .p-fv {
+    margin: 20px 20px 15px;
+  }
+}
+.p-fv__reserve {
+  position: fixed;
+  top: 180px;
+  right: 0px;
+  width: 97px;
+  height: 120px;
+  background: #1391E6;
+  border-radius: 20pt 0 0 20pt;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px 20px 10px;
+  transition: 0.8s;
+  z-index: 35;
+}
+.p-fv__reserve:hover {
+  background: #0060A0;
+}
+.p-fv__reserve img {
+  margin-bottom: 8px;
+}
+.p-fv__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  max-height: 340px;
+  overflow: hidden;
+  border-radius: 25pt;
+  position: relative;
+}
+@media screen and (max-width: 479px) {
+  .p-fv__img {
+    max-height: 190px;
+  }
+}
+.p-fv__txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.p-fv__ttl {
+  font-size: 32px;
+  line-height: 1.125;
+  letter-spacing: 3.2px;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+@media screen and (max-width: 479px) {
+  .p-fv__ttl {
+    font-size: 24px;
+  }
+}
+.p-fv__subttl {
+  line-height: 2.5714285714;
+  letter-spacing: 1.4px;
+  color: #FFFFFF;
+  white-space: nowrap;
+  margin-top: 15px;
+}
+@media screen and (max-width: 479px) {
+  .p-fv__subttl {
+    font-size: 12px;
+    margin-top: 0px;
+  }
+}
+
+.p-swiper {
+  margin: 20px auto 0;
+  z-index: 1;
+  position: relative;
+  width: 93%;
+  overflow: hidden;
+  border-radius: 20pt;
+}
+@media screen and (max-width: 479px) {
+  .p-swiper {
+    max-width: 335px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-swiper {
+    margin: 40px auto 0;
+    height: 520px;
+    max-width: 1920px;
+  }
+}
+.p-swiper .swiper_1 {
+  width: 100%;
+}
+.p-swiper .swiper_1 .swiper-slide {
+  position: relative;
+}
+.p-swiper .swiper_1 .top-text {
+  width: 264px;
+  position: absolute;
+  left: 10px;
+  bottom: 60px;
+}
+@media screen and (min-width: 1100px) {
+  .p-swiper .swiper_1 .top-text {
+    width: 415px;
+    bottom: 40px;
+    left: 40px;
+  }
+}
+.p-swiper .swiper-button-next,
+.p-swiper .swiper-button-prev {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease 0s;
+  margin: -20px 0 0;
+  z-index: 2;
+}
+@media screen and (min-width: 1100px) {
+  .p-swiper .swiper-button-next,
+  .p-swiper .swiper-button-prev {
+    width: 48px;
+    height: 48px;
+  }
+}
+.p-swiper .swiper-button-next:hover,
+.p-swiper .swiper-button-prev:hover {
+  opacity: 0.7;
+}
+.p-swiper .swiper-button-next::after,
+.p-swiper .swiper-button-prev::after {
+  content: "";
+}
+.p-swiper .swiper-button-prev {
+  left: 1%;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-swiper .swiper-button-prev {
+    left: 24px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-swiper .swiper-button-prev {
+    left: 4px;
+  }
+}
+.p-swiper .swiper-button-next {
+  right: 1%;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-swiper .swiper-button-next {
+    right: 24px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-swiper .swiper-button-next {
+    right: 4px;
+  }
+}
+.p-swiper .swiper-pagination {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  text-align: left;
+  width: auto;
+  transform: rotate(90deg);
+  bottom: 42px;
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-swiper .swiper-pagination {
+    left: -5px;
+  }
+}
+@media screen and (max-width: 479px) {
+  .p-swiper .swiper-pagination {
+    left: -15px;
+  }
+}
+.p-swiper__bottom {
+  z-index: 1;
+  position: relative;
+  padding: 0 15px;
+  width: 93%;
+}
+@media screen and (max-width: 479px) {
+  .p-swiper__bottom {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-swiper__bottom {
+    padding: 0 35px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-swiper__bottom {
+    padding: 0 60px;
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+  }
+}
+.p-swiper__calendar {
+  width: 100%;
+  margin-bottom: 40px;
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.35);
+  margin-top: -10px;
+}
+@media screen and (min-width: 1100px) {
+  .p-swiper__calendar {
+    width: 50%;
+    margin-left: 62px;
+    margin-bottom: 10px;
+    margin-top: -35px;
+  }
+}
+.p-swiper__info {
+  width: 100%;
+}
+@media screen and (min-width: 1100px) {
+  .p-swiper__info {
+    width: 50%;
+  }
+}
+.p-swiper__info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0px;
+  border-bottom: solid 1px #000;
+}
+.p-swiper__info-head {
+  display: flex;
+  align-items: baseline;
+  margin-left: 15px;
+}
+.p-swiper__info-sub {
+  color: #1391E6;
+  font-size: 13px;
+  margin-left: 15px;
+  letter-spacing: 1.2px;
+}
+.p-swiper__info-ttl {
+  font-size: 20px;
+}
+.p-swiper__info-link {
+  color: #888;
+  font-size: 12px;
+  align-items: center;
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+.p-swiper__info-link:hover {
+  text-decoration: none;
+}
+.p-swiper__info-body {
+  display: flex;
+  justify-content: left;
+  padding: 12px 0px;
+  position: relative;
+  border-bottom: solid 1px #000;
+  transition: 0.3s;
+}
+.p-swiper__info-body::after {
+  content: "";
+  position: absolute;
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-arrow-black.png);
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background-size: cover;
+  z-index: 1000;
+  transition: all 0.3s ease 0s;
+}
+.p-swiper__info-body:hover::after {
+  background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-arrow-blue-btn.png);
+}
+.p-swiper__info-body:hover {
+  color: #1391E6;
+}
+.p-swiper__info-body:hover::after {
+  right: -5px;
+}
+.p-swiper__info-date {
+  font-size: 12px;
+}
+.p-swiper__info-newsttl {
+  margin-left: 15px;
+  font-size: 14px;
+}
+@media screen and (max-width: 479px) {
+  .p-swiper__info-newsttl {
+    font-size: 11px;
+  }
+}
+
+.p-staff__director {
+  margin-top: 40px;
+}
+@media screen and (min-width: 1100px) {
+  .p-staff__director {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-staff__director-greeting {
+    margin-right: 80px;
+  }
+}
+.p-staff__director-body-bottom {
+  text-align: right;
+}
+.p-staff__director-head {
+  font-size: 28px;
+  letter-spacing: 2.28px;
+  margin-bottom: 40px;
+}
+.p-staff__director-text {
+  margin-bottom: 40px;
+}
+.p-staff__director-career-wrap {
+  display: flex;
+  justify-content: left;
+  margin-bottom: 16px;
+}
+.p-staff__director-career-wrap:last-child {
+  margin-bottom: 0;
+}
+.p-staff__director-career-text:first-child {
+  margin-right: 16px;
+}
+.p-staff__director-license-name {
+  margin-bottom: 16px;
+}
+.p-staff__director-license-name:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 479px) {
+  .p-staff__director-picture {
+    margin: 40px 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-staff__director-picture {
+    margin: 40px 0;
+  }
+}
+.p-staff__ttl {
+  text-align: center;
+}
+.p-staff__items {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 479px) {
+  .p-staff__items {
+    display: block;
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .p-staff__item {
+    width: 100%;
+    margin-top: 50px;
+  }
+  .p-staff__item:first-child {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .p-staff__item {
+    width: calc(33.3333333333% - 53.3333333333px);
+    margin-right: 80px;
+  }
+  .p-staff__item:nth-child(3n) {
+    margin-right: 0;
+  }
+  .p-staff__item:nth-child(n+4) {
+    margin-top: 60px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .p-staff__item {
+    width: calc(50% - 10px);
+    margin-right: 20px;
+  }
+  .p-staff__item:nth-child(2n) {
+    margin-right: 0;
+  }
+  .p-staff__item:nth-child(n+3) {
+    margin-top: 40px;
+  }
+}
+.p-staff__item-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+.p-staff__item-jobname {
+  margin-right: 12px;
+  font-size: 12px;
+}
+.p-staff__item-name {
+  font-size: 18px;
+}
+.p-staff__item table {
+  width: 100%;
+}
+.p-staff__item table tr {
+  height: 55.3333333333px;
+}
+.p-staff__item table th {
+  width: 50%;
+  background: #DFF1FD;
+}
+.p-staff__item table th,
+.p-staff__item table td {
+  vertical-align: middle;
+  text-align: center;
+}
+.swiper_2 {
+  height: auto;
+  width: 100vw;
+}
+.swiper_2 .swiper-wrapper {
+  transition-timing-function: linear;
+}
+.p-pagetop {
+  position: fixed;
+  right: 15px;
+  bottom: 40px;
+  z-index: 30;
+  height: 52px;
+  width: 52px;
+  background-image: url(../img/トップ/totop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top top;
+}
+
+.u_fw-bold {
+  font-weight: 700;
+}
+
+.u_fz-lg {
+  font-size: 1.4em;
+}
+
+.u_fc_blue {
+  color: #0a58ca;
+}
+
+.u_fc_yellow {
+  color: #f1991d;
+  font-weight: 700;
+}
+
+.u_fc_red {
+  color: #EE5A6D;
+}
+
+.u_fz-sm {
+  font-size: 11px;
+  color: #888888;
+  text-align: left;
+}
+
+.u_text-link {
+  color: #f1991d;
+  text-decoration: underline;
+}
+.u_text-link:hover {
+  text-decoration: none;
+}
+
+.u_text-link-b {
+  font-weight: 700;
+  text-decoration: underline;
+}
+.u_text-link-b:hover {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1100px) {
+  .u-hidden-pc {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1099px) {
+  .u-hidden-tab {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .u-hidden-sp {
+    display: none !important;
+  }
+}/*# sourceMappingURL=style.css.map */

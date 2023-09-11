@@ -1,0 +1,141 @@
+@use "../global" as global;
+
+.c-ttl {
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 1.6px;
+    display: inline-block;
+    padding: 0 85px;
+
+    @include global.mq('sp') {
+        padding: 0 64px;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 65px;
+        height: 20px;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/title-deco.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &:before {
+        left: 0;
+
+    }
+
+    &:after {
+        right: 0;
+    }
+}
+
+.c-top__subttl {
+    font-size: 11px;
+    color: global.$main-color;
+    letter-spacing: 1.1px;
+
+    @include global.mq('pc') {
+        margin-top: 35px;
+    }
+}
+
+.c-subttl1,
+.c-subttl2 {
+    h2 {
+        text-align: left;
+        padding-bottom: 8px;
+        border-bottom: solid 1px #707070;
+    }
+}
+
+.c-subttl1 {
+    &:first-child {
+        margin-top: 20px;
+    }
+
+    h2 {
+        margin-bottom: 16px;
+    }
+}
+
+.c-subttl2 {
+    &:first-child {
+        margin-top: 60px;
+    }
+
+    h2 {
+        margin-bottom: 40px;
+    }
+}
+
+.c-subttl3__1,
+.c-subttl3__2,
+.c-subttl3__3 {
+    padding-left: 30px;
+
+    h2 {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -8px;
+        width: 100%;
+        height: 1px;
+        background-color: #707070;
+    }
+}
+
+.c-subttl3__1 {
+    &::before {
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/sidebar-icon_1.png);
+    }
+}
+
+.c-subttl3__2 {
+    &::before {
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/sidebar-icon_2.png);
+    }
+}
+
+.c-subttl3__3 {
+    &::before {
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/sidebar-icon_3.png);
+    }
+}
+
+.c-about__subttl {
+    font-size: 11px;
+    color: global.$main-color;
+    letter-spacing: 1.1px;
+    text-align: left;
+
+    @include global.mq('pc') {
+        margin-top: 35px;
+    }
+}

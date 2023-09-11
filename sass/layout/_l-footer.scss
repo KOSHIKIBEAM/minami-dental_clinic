@@ -1,0 +1,60 @@
+@use "../global" as global;
+
+
+.l-footer {
+    z-index: map-get(global.$layer, "drawer") + 2;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: 0;
+        height: 32px;
+        width: 100vw;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/footer-wave.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top top;
+    }
+
+    &__inner {
+        background: global.$sub-color02;
+        padding: 0px 10px;
+
+        @include global.mq('pc') {
+            padding: 56px 140px 60px;
+        }
+
+        @include global.mq('tab') {
+            padding: 30px 60px 0;
+        }
+    }
+
+    &__info {
+        background: global.$text-color2;
+        padding: 32px 10px 20px;
+
+        @include global.mq('sp') {
+            margin-bottom: 60px;
+        }
+
+        @include global.mq('tab') {
+            margin-bottom: 60px;
+        }
+
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: center;
+            padding: 40px 50px;
+            align-items: center;
+            margin-bottom: 45px;
+        }
+    }
+
+    &__nav {
+        @include global.mq('sp') {
+            padding-left: 32px;
+        }
+    }
+}

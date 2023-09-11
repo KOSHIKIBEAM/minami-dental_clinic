@@ -1,0 +1,247 @@
+@use "../global" as global;
+
+.p-swiper {
+    margin: 20px auto 0;
+    z-index: map-get(global.$layer, "default");
+    position: relative;
+    width: 93%;
+    overflow: hidden;
+    border-radius: 20pt;
+
+    @include global.mq('sp') {
+        max-width: 335px;
+    }
+
+    @include global.mq('tab') {}
+
+    @include global.mq('pc') {
+        margin: 40px auto 0;
+        height: 520px;
+        max-width: 1920px;
+    }
+
+    .swiper_1 {
+        width: 100%;
+
+        .swiper-slide {
+            position: relative;
+        }
+
+        .top-text {
+            width: 264px;
+            position: absolute;
+            left: 10px;
+            bottom: 60px;
+
+            @include global.mq('pc') {
+                width: 415px;
+                bottom: 40px;
+                left: 40px;
+            }
+        }
+    }
+
+
+    .swiper-button-next,
+    .swiper-button-prev {
+
+        @include global.mq('pc') {
+            width: 48px;
+            height: 48px;
+        }
+
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        transition: all 0.3s ease 0s;
+        margin: -20px 0 0;
+        z-index: map-get(global.$layer, "default")+1;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        &::after {
+            content: "";
+        }
+    }
+
+    .swiper-button-prev {
+        left: 1%;
+
+        @include global.mq('tab') {
+            left: 24px;
+        }
+
+        @include global.mq('sp') {
+            left: 4px;
+        }
+    }
+
+    .swiper-button-next {
+        right: 1%;
+
+        @include global.mq('tab') {
+            right: 24px;
+        }
+
+        @include global.mq('sp') {
+            right: 4px;
+        }
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        text-align: left;
+        width: auto;
+        transform: rotate(90deg);
+        bottom: 42px;
+
+        @include global.mq('tab') {
+            left: -5px;
+        }
+
+        @include global.mq('sp') {
+            left: -15px;
+        }
+    }
+
+    &__bottom {
+        z-index: map-get(global.$layer, "default");
+        position: relative;
+        padding: 0 15px;
+        width: 93%;
+
+        @include global.mq('sp') {
+            width: 100%;
+        }
+
+        @include global.mq('tab') {
+            padding: 0 35px;
+        }
+
+        @include global.mq('pc') {
+            padding: 0 60px;
+            max-width: 1920px;
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+
+    }
+
+    &__calendar {
+        width: 100%;
+        margin-bottom: 40px;
+        box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.35);
+        margin-top: -10px;
+
+        @include global.mq('pc') {
+            width: 50%;
+            margin-left: 62px;
+            margin-bottom: 10px;
+            margin-top: -35px;
+        }
+
+        img {}
+    }
+
+    &__info {
+
+        width: 100%;
+
+        @include global.mq('pc') {
+            width: 50%;
+        }
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0px;
+            border-bottom: solid 1px #000;
+        }
+
+        &-head {
+            display: flex;
+            align-items: baseline;
+            margin-left: 15px;
+        }
+
+        &-sub {
+            color: global.$main-color;
+            font-size: 13px;
+            margin-left: 15px;
+            letter-spacing: 1.2px;
+        }
+
+        &-ttl {
+            font-size: 20px;
+        }
+
+        &-link {
+            color: #888;
+            font-size: 12px;
+            align-items: center;
+            text-decoration: underline;
+            transition: all .3s;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        &-body {
+            display: flex;
+            justify-content: left;
+            padding: 12px 0px;
+            position: relative;
+            border-bottom: solid 1px #000;
+            transition: .3s;
+
+            &::after {
+                content: '';
+                position: absolute;
+                background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-arrow-black.png);
+                width: 20px;
+                height: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+                background-size: cover;
+                z-index: 1000;
+                transition: all 0.3s ease 0s;
+
+            }
+
+            &:hover {
+                &::after {
+                    background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon-arrow-blue-btn.png);
+                }
+            }
+
+            &:hover {
+                color: global.$main-color;
+
+                &::after {
+                    right: -5px;
+                }
+            }
+        }
+
+        &-date {
+            font-size: 12px;
+        }
+
+        &-newsttl {
+            margin-left: 15px;
+            font-size: 14px;
+
+            @include global.mq('sp') {
+                font-size: 11px;
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+@use "../global" as global;
+
+.l-medical {
+
+    &__main,
+    &__items {
+        position: relative;
+        z-index: map-get(global.$layer, "default");
+
+    }
+
+    &__main {
+        padding: 80px 150px 0;
+
+        @include global.mq('tab') {
+            padding: 40px 50px 0;
+        }
+
+        @include global.mq('sp') {
+            padding: 40px 15px 0;
+        }
+    }
+
+    &__items {}
+
+}
+
+#medical-items1,
+#medical-items2 {
+    margin-top: 160px;
+
+    @include global.mq('tab') {
+        margin-top: 100px;
+    }
+
+    @include global.mq('sp') {
+        margin-top: 80px;
+    }
+}
+
+
+#medical-items2 {
+    margin-bottom: 160px;
+
+    @include global.mq('tab') {
+        margin-bottom: 100px;
+    }
+
+    @include global.mq('sp') {
+        margin-bottom: 80px;
+    }
+}

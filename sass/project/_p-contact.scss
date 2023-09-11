@@ -1,0 +1,136 @@
+@use "../global" as global;
+
+.p-contact {
+    &__ttl {
+        margin: 100px 0 70px;
+        text-align: center;
+
+        @include global.mq('pc') {
+            margin: 160px 0 60px;
+        }
+    }
+
+    &__list {
+        margin-bottom: 60px;
+
+        @include global.mq('pc') {
+            margin-bottom: 72px;
+        }
+    }
+
+    &__item {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: solid 1px #DDDDDD;
+
+        &:first-child {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: solid 1px #DDDDDD;
+        }
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+
+        &-ttl {
+            vertical-align: middle;
+            display: inline-block;
+            width: 130px;
+            flex-shrink: 0;
+
+            @include global.mq('sp') {
+                margin-bottom: 15px;
+            }
+
+            @include global.mq('tab') {
+                margin-bottom: 15px;
+            }
+
+            @include global.mq('pc') {
+                margin-right: 112px;
+            }
+
+            span {}
+        }
+
+        &-txt {
+            position: relative;
+            display: inline;
+            font-size: 16px;
+        }
+
+        &-label {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%);
+            display: inline-block;
+            font-size: 12px;
+            width: 32px;
+            height: 23px;
+            background: global.$accent-color;
+            color: global.$text-color2;
+            border-radius: 4px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        &-input {
+            width: 100%;
+
+            input,
+            textarea {
+                width: 100%;
+                background: #F6F6F6;
+                padding: 13px 16px;
+                border-radius: 4px;
+                border-style: none;
+            }
+
+            input {}
+
+            textarea {
+                height: 200px;
+                resize: vertical;
+            }
+        }
+    }
+
+    &__submit {
+        text-align: center;
+
+        &-btn {
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            text-decoration: none;
+            color: global.$main-color;
+            border: solid 1px global.$main-color;
+            background: global.$text-color2;
+            font-size: 14px;
+            border-radius: 30px;
+            transition: 0.3s;
+            padding: 10px 115px;
+
+            @include global.mq('pc') {
+                padding: 17px 155px;
+            }
+
+            &:hover {
+                box-shadow: 0 0 rgba(0, 0, 0, 0);
+            }
+
+            @include global.mq('sp') {
+                margin: 0 auto;
+            }
+        }
+    }
+}

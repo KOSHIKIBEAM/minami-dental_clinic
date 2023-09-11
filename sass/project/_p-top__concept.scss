@@ -1,0 +1,81 @@
+@use "../global" as global;
+
+.p-top__concept {
+    text-align: left;
+    z-index: map-get(global.$layer, "default");
+
+    &-items {
+
+        @include global.mq('pc') {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        @include global.mq('tab') {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+
+    &-body {
+        @include global.mq('sp') {
+            padding: 0 15px;
+        }
+
+        @include global.mq('pc') {
+            margin-right: 150px;
+        }
+
+        @include global.mq('tab') {
+            margin-right: 60px;
+        }
+    }
+
+    &-head {
+        font-size: 20px;
+        text-align: left;
+        margin: 16px 0 32px;
+
+        @include global.mq('pc') {
+            margin: 28px 0 40px;
+        }
+
+        @include global.mq('tab') {
+            margin: 28px 0 40px;
+        }
+    }
+
+    &-txt {
+        text-align: left;
+        font-size: 14px;
+    }
+
+    &-btn {
+        margin-top: 40px;
+        text-align: center;
+
+        @include global.mq('pc') {
+            margin-top: 80px;
+        }
+
+        @include global.mq('tab') {
+            margin-top: 60px;
+        }
+    }
+
+    &-img {
+        margin-right: 40px;
+
+        @include global.mq('sp') {
+            margin-top: 50px;
+        }
+
+        @include global.mq('pc') {
+            margin-right: 95px;
+        }
+
+        @include global.mq('tab') {
+            margin-right: 80px;
+        }
+    }
+}

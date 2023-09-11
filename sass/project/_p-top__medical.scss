@@ -1,0 +1,168 @@
+@use "../global" as global;
+
+.p-top__medical {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &-items {
+        margin-top: 60px;
+
+        @include global.mq('pc') {
+            display: flex;
+            justify-content: center;
+            height: 290px;
+        }
+    }
+
+    &-bottom-txt {
+        padding: 40px;
+        background: global.$text-color2;
+        margin-top: 40px;
+        text-align: left;
+    }
+}
+
+.p-top__medical-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20pt;
+    height: 210px;
+
+    @include global.mq('sp') {
+
+        &:first-child {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include global.mq('tab') {
+        height: 290px;
+
+        &:first-child {
+            margin-bottom: 20px;
+        }
+    }
+
+    @include global.mq('pc') {
+        height: 290px;
+        width: calc(50% - 80px * 1 / 2);
+        margin-right: 80px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        transition: all .5s;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &::before {
+        top: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        object-fit: cover;
+    }
+
+    &:nth-child(1) {
+        &::before {
+            background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bofu-shaw-Dqrlp6cMLkE-unsplash-1.png);
+        }
+    }
+
+    &:nth-child(2) {
+        &::before {
+            background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bofu-shaw-Dqrlp6cMLkE-unsplash.png);
+        }
+    }
+
+    &::after {
+        background: rgba(0, 0, 0, 0.2);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1.1);
+        }
+
+        &::after {
+            background: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    &-line {
+        border-radius: 20px;
+        height: calc(100% - 20px);
+        margin: 10px;
+        position: relative;
+        transition: 0.1s ease-out;
+        width: calc(100% - 20px);
+        z-index: 1;
+
+        &:hover {
+            border: solid 2px global.$text-color2;
+        }
+    }
+
+
+    &-body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        color: global.$text-color2;
+    }
+
+    &-head {
+        font-size: 20px;
+        padding-bottom: 20px;
+        position: relative;
+
+        @include global.mq('pc') {
+            font-size: 28px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: global.$text-color2;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+
+            @include global.mq('pc') {
+                width: 40px;
+            }
+        }
+    }
+
+    &-txt {
+        margin-top: 20px;
+        font-size: 12px;
+        white-space: nowrap;
+
+        @include global.mq('pc') {
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,393 @@
+@use "../global" as global;
+
+.p-reservation {
+
+    &__top {
+        margin-bottom: 160px;
+
+        @include global.mq('sp') {
+            margin-bottom: 100px;
+        }
+    }
+
+    &__tel {
+        text-align: center;
+        text-align: left;
+        padding-bottom: 42px;
+
+        &-ttl {
+            font-size: 28px;
+            color: #393939;
+            margin-bottom: 28px;
+            letter-spacing: 2.24px;
+            text-align: left;
+
+            @include global.mq('sp') {
+                font-size: 20px;
+            }
+        }
+
+        &-txt {
+            font-size: 32px;
+            color: global.$main-color;
+            position: relative;
+            padding-left: 24px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                transform: translateY(-50%);
+                background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon_tel.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &-time {
+            font-size: 12px;
+            color: global.$main-color;
+            padding-left: 24px;
+        }
+    }
+
+    &__ttl {
+        text-align: center;
+        margin-bottom: 65px;
+    }
+
+    &__mail {
+        text-align: center;
+
+        &-ttl {
+            font-size: 28px;
+            color: #393939;
+            margin-bottom: 28px;
+            letter-spacing: 2.24px;
+            text-align: left;
+
+            @include global.mq('sp') {
+                font-size: 20px;
+            }
+        }
+
+        &-txt {
+            text-align: left;
+        }
+    }
+
+    &__list {
+        margin-bottom: 60px;
+
+        @include global.mq('pc') {
+            margin-bottom: 72px;
+        }
+    }
+
+    &__radio {
+        .p-reservation__radio-input {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .3em 2em;
+            border: none;
+        }
+
+        .p-reservation__radio-input label {
+            display: flex;
+            align-items: center;
+            gap: 0 .5em;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .p-reservation__radio-input label::before,
+        .p-reservation__radio-input label:has(:checked)::after {
+            border-radius: 50%;
+            content: '';
+        }
+
+        .p-reservation__radio-input label::before {
+            width: 24px;
+            height: 24px;
+            border: solid 1px global.$main-color;
+            background: global.$text-color2;
+        }
+
+        .p-reservation__radio-input label:has(:checked)::after {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translate(-50%, -50%);
+            width: 12px;
+            height: 12px;
+            background-color: #2589d0;
+            animation: anim-radio-001 .3s linear;
+        }
+
+        @keyframes anim-radio-001 {
+            0% {
+                box-shadow: 0 0 0 1px transparent;
+            }
+
+            50% {
+                box-shadow: 0 0 0 10px #2589d033;
+            }
+
+            100% {
+                box-shadow: 0 0 0 10px transparent;
+            }
+        }
+
+        .p-reservation__radio-input input {
+            display: none;
+        }
+    }
+
+
+
+    &__submit {
+        text-align: center;
+
+        &-btn {
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            text-decoration: none;
+            color: global.$main-color;
+            border: solid 1px global.$main-color;
+            background: global.$text-color2;
+            font-size: 14px;
+            border-radius: 30px;
+            transition: 0.3s;
+            padding: 10px 115px;
+
+            @include global.mq('pc') {
+                padding: 17px 155px;
+            }
+
+            &:hover {
+                box-shadow: 0 0 rgba(0, 0, 0, 0);
+            }
+
+            @include global.mq('sp') {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.p-reservation__item {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #DDDDDD;
+
+    &:first-child {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: solid 1px #DDDDDD;
+    }
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    @include global.mq('pc') {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    &-ttl {
+        vertical-align: middle;
+        display: inline-block;
+        width: 130px;
+        flex-shrink: 0;
+
+        @include global.mq('sp') {
+            margin-bottom: 15px;
+        }
+
+        @include global.mq('tab') {
+            margin-bottom: 15px;
+        }
+
+        @include global.mq('pc') {
+            margin-right: 112px;
+        }
+
+        span {}
+    }
+
+    &-txt {
+        position: relative;
+        display: inline;
+        font-size: 16px;
+    }
+
+    &-label {
+        position: absolute;
+        top: 50%;
+        right: -40px;
+        transform: translateY(-50%);
+        display: inline-block;
+        font-size: 12px;
+        width: 32px;
+        height: 23px;
+        background: global.$accent-color;
+        color: global.$text-color2;
+        border-radius: 4px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    &-input {
+        width: 100%;
+
+        input,
+        textarea {
+            width: 100%;
+            background: #F6F6F6;
+            padding: 13px 16px;
+            border-radius: 4px;
+            border-style: none;
+        }
+
+        input {}
+
+        textarea {
+            height: 200px;
+            resize: vertical;
+        }
+    }
+}
+
+.p-reservation__item-input-radio {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-wrap {
+        display: flex;
+        justify-content: left;
+        margin-bottom: 15px;
+        margin-right: 15px;
+
+        label {
+            margin-left: 8px;
+        }
+
+        /*リセット */
+        input[type="checkbox"] {
+            margin: 0;
+            padding: 0;
+            background: none;
+            border: none;
+            border-radius: 0;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        /* チェックボックスデザイン */
+        input[type="checkbox"] {
+            cursor: pointer;
+            padding-left: 30px;
+            /*label手前にチェックボックス用の余白を開ける*/
+            vertical-align: middle;
+            position: relative;
+            width: auto;
+        }
+
+        input[type="checkbox"]::before,
+        input[type="checkbox"]::after {
+            content: "";
+            display: block;
+            position: absolute;
+        }
+
+        input[type="checkbox"]::before {
+            background-color: global.$text-color2;
+            border-radius: 0%;
+            border: 1px solid global.$main-color;
+            width: 24px;
+            /*チェックボックスの横幅*/
+            height: 24px;
+            /*チェックボックスの縦幅*/
+            transform: translateY(-50%);
+            top: 50%;
+            left: 5px;
+        }
+
+        input[type="checkbox"]::after {
+            border-bottom: 1px solid global.$main-color;
+            /*チェックの太さ*/
+            border-left: 1px solid global.$main-color;
+            /*チェックの太さ*/
+            opacity: 0;
+            /*チェック前は非表示*/
+            height: 7px;
+            /*チェックの高さ*/
+            width: 13px;
+            /*チェックの横幅*/
+            transform: rotate(-45deg);
+            top: 5px;
+            /*チェック時の位置調整*/
+            left: 11px;
+            /*チェック時の位置調整*/
+        }
+
+        input[type="checkbox"]:checked::after {
+            opacity: 1;
+            /*チェック後表示*/
+        }
+    }
+}
+
+.p-reservation__item-input-select {
+    .selectbox-003 {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/select-arrow.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .selectbox-003 select {
+        appearance: none;
+        min-width: 100%;
+        height: 2.8em;
+        padding: .4em calc(.8em + 30px) .4em .8em;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        background-color: global.$text-color2;
+        color: #333333;
+        font-size: 1em;
+        cursor: pointer;
+    }
+}
+
+.p-reservation__item-input-date {
+    input {
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}

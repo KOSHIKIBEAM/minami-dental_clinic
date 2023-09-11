@@ -1,0 +1,112 @@
+@use "../global" as global;
+
+.c-footer__btn1 {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: global.$text-color2;
+    background: global.$main-color;
+    font-size: 14px;
+    padding: 17px 45px 17px 65px;
+    border-radius: 30px;
+    transition: 0.3s;
+
+    @include global.mq('sp') {
+        padding: 11px 49px 11px 60px;
+    }
+
+    &:hover {
+        color: global.$main-color;
+        background: global.$text-color2;
+        border: 1px solid global.$main-color;
+    }
+
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 57%;
+        transform: translateY(-50%);
+        left: 35px;
+        background-image: url(../img/common/footer-reservation.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        transition: 0.3s;
+        height: 20px;
+
+        @include global.mq('sp') {
+            top: 63%;
+            left: 29px;
+        }
+    }
+
+    &:hover {
+        &::before {
+            background-image: url(../img/common/footer-reservation-hover.svg);
+        }
+    }
+
+    @include global.mq('sp') {
+        margin: 0 auto;
+    }
+}
+
+.c-footer__btn2 {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    color: global.$main-color;
+    background: global.$text-color2;
+    font-size: 14px;
+    padding: 17px 45px 17px 65px;
+    border-radius: 30px;
+    transition: 0.3s;
+    border: 1px solid global.$main-color;
+
+    @include global.mq('sp') {
+        padding: 11px 30px 11px 50px;
+
+    }
+
+    &:hover {
+        background: global.$main-color;
+        color: global.$text-color2;
+        border: none;
+    }
+
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 40px;
+        transition: 0.3s;
+        background-image: url(../img/common/footer-contact.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+
+        @include global.mq('sp') {
+            left: 27px;
+        }
+    }
+
+    &:hover {
+        &::before {
+            background-image: url(../img/common/footer-contact-hover.svg);
+        }
+    }
+
+    @include global.mq('sp') {
+        margin: 0 auto;
+    }
+}

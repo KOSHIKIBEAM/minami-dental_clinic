@@ -1,0 +1,136 @@
+@use "../global" as global;
+
+.p-about__concept {
+    text-align: center;
+    position: relative;
+    z-index: map-get(global.$layer, "default");
+
+    &::before {
+        content: '';
+        z-index: map-get(global.$layer, "default") - 2;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 150%;
+        height: 308px;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/concept-bg-1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left;
+
+        @include global.mq('pc') {
+            margin-left: 416px;
+            height: 725px;
+        }
+
+        @include global.mq('tab') {
+            margin-left: 416px;
+            height: 725px;
+        }
+    }
+
+    &-items {
+        padding-top: 150px;
+
+        @include global.mq('pc') {
+            padding-top: 240px;
+        }
+    }
+
+    &-item1 {
+
+        @include global.mq('pc') {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .p-about__concept-body {
+            padding: 0 15px;
+
+            @include global.mq('pc') {
+                margin-right: 150px;
+            }
+
+            @include global.mq('tab') {
+                padding: 0 50px;
+            }
+        }
+
+        .p-about__concept-img {
+
+            margin-top: 50px;
+            margin-right: 40px;
+
+            @include global.mq('pc') {
+                margin-right: 95px;
+                width: 640px;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &-item2 {
+
+        @include global.mq('pc') {
+            display: flex;
+            flex-direction: row;
+            margin-top: 267px;
+        }
+
+        padding-top: 100px;
+
+        .p-about__concept-body {
+            @include global.mq('sp') {
+                padding: 0 15px;
+            }
+
+            @include global.mq('pc') {
+                margin-left: 150px;
+            }
+
+            @include global.mq('tab') {
+                padding: 0 50px;
+            }
+        }
+
+        .p-about__concept-img {
+
+            margin-top: 50px;
+            margin-left: 40px;
+
+            @include global.mq('pc') {
+                margin-left: 95px;
+                width: 640px;
+                flex-shrink: 0;
+            }
+        }
+    }
+
+    &-head {
+        font-size: 20px;
+        text-align: left;
+        margin: 16px 0 32px;
+
+        @include global.mq('pc') {
+            margin: 28px 0 40px;
+        }
+
+    }
+
+    &-txt {
+        text-align: left;
+        font-size: 14px;
+    }
+
+    &-btn {
+        margin-top: 40px;
+        text-align: center;
+
+        @include global.mq('pc') {
+            margin-top: 80px;
+        }
+
+    }
+
+
+}

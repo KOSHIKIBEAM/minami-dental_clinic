@@ -1,0 +1,243 @@
+@use "../global" as global;
+
+.l-header {
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+    z-index: map-get(global.$layer, "header");
+
+    @include global.mq('sp') {
+        height: 60px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 15px;
+        height: 60px;
+
+        @include global.mq('pc') {
+            padding: 0px 40px;
+            height: 80px;
+        }
+
+    }
+
+    &__left {}
+
+    &__logo {
+        a {
+            img {
+                width: 269px;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        justify-content: right;
+
+        @include global.mq('sp') {
+            display: none;
+        }
+
+        @include global.mq('tab') {
+            display: none;
+        }
+
+        .l-header-nav {
+            display: flex;
+            justify-content: right;
+        }
+    }
+
+    .l-header-info {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+
+        &__address {
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        &__tel {
+            font-size: 32px;
+            color: global.$main-color;
+            position: relative;
+            margin-left: 32px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -32px;
+                transform: translateY(-50%);
+                background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/icon_tel.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+}
+
+.l-header-nav__items {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 64px;
+
+    li {
+        line-height: 60px;
+        margin-right: 24px;
+        padding-top: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            position: relative;
+            transition: transform 0.3s;
+
+            &::after {
+                content: '';
+                width: 20px;
+                height: 2px;
+                position: absolute;
+                bottom: -7px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: global.$main-color;
+                transition: transform 0.3s;
+                transform-origin: center top;
+                transform: translateX(-50%) scale(0, 1);
+            }
+
+            &:hover {
+                color: global.$main-color;
+
+                &::after {
+                    content: '';
+                    transform: translateX(-50%) scale(1, 1);
+                }
+            }
+        }
+    }
+}
+
+.l-header-nav {
+
+    &__home,
+    &__about,
+    &__medical,
+    &__staff,
+    &__blog,
+    &__contact {
+        a {
+
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 23px;
+                transform: translateX(-50%);
+                left: 50%;
+                transition: transform 0.3s;
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+
+    &__home {
+        a {
+            &::before {
+                background-image: url(../img/header-svg/icon-01.svg);
+            }
+
+            &:hover {
+                &::before {
+                    background-image: url(../img/header-svg/icon-01-hover.svg);
+                }
+            }
+        }
+    }
+
+    &__about {
+        a {
+            &::before {
+                background-image: url(../img/header-svg/icon-02.svg);
+            }
+
+            &:hover {
+                &::before {
+                    background-image: url(../img/header-svg/icon-02-hover.svg);
+                }
+            }
+        }
+    }
+
+    &__medical {
+        a {
+            &::before {
+                background-image: url(../img/header-svg/icon-03.svg);
+            }
+
+            &:hover {
+                &::before {
+                    background-image: url(../img/header-svg/icon-03-hover.svg);
+                }
+            }
+        }
+    }
+
+    &__staff {
+        a {
+            &::before {
+                background-image: url(../img/header-svg/icon-04.svg);
+            }
+
+            &:hover {
+                &::before {
+                    background-image: url(../img/header-svg/icon-04-hover.svg);
+                }
+            }
+        }
+    }
+
+    &__blog {
+        a {
+            &::before {
+                background-image: url(../img/header-svg/icon-05.svg);
+            }
+
+            &:hover {
+                &::before {
+                    background-image: url(../img/header-svg/icon-05-hover.svg);
+                }
+            }
+        }
+    }
+
+    &__contact {
+        a {
+            &::before {
+                background-image: url(../img/header-svg/icon-07.svg);
+            }
+
+            &:hover {
+                &::before {
+                    background-image: url(../img/header-svg/icon-07-hover.svg);
+                }
+            }
+        }
+    }
+}

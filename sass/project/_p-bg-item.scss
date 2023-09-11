@@ -1,0 +1,91 @@
+@use "../global" as global;
+
+.p-bg-item1,
+.p-bg-item2,
+.p-bg-item3 {
+    position: relative;
+    z-index: map-get(global.$layer, "default");
+}
+
+.p-bg-item1 {
+    height: 15.70313vw;
+    width: 100%;
+
+    &::before {
+        content: '';
+        z-index: map-get(global.$layer, "default") - 2;
+        height: inherit;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        width: inherit;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bg-top.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+.p-bg-item2 {
+    height: 7.57812vw;
+    width: 100%;
+
+    &::before {
+        content: '';
+        z-index: map-get(global.$layer, "default") - 2;
+        height: inherit;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%);
+        width: inherit;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/bg-bottom.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+.p-bg-item3 {
+
+    &::after,
+    &::before {
+        content: '';
+        z-index: map-get(global.$layer, "default") - 2;
+        position: absolute;
+        bottom: 30px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+        @include global.mq('pc') {
+            bottom: 100px;
+        }
+    }
+
+    &::before {
+        left: 15px;
+        height: 40px;
+        width: 40px;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/deco-kirakira2-w.png);
+
+        @include global.mq('pc') {
+            height: 52px;
+            width: 52px;
+            left: 30px;
+        }
+    }
+
+    &::after {
+        right: 0;
+        width: 80px;
+        height: 80px;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/deco-kirakira-w.png);
+
+        @include global.mq('pc') {
+            width: 125px;
+            height: 125px;
+        }
+    }
+}

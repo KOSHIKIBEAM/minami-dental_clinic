@@ -1,0 +1,36 @@
+@use "../global" as global;
+
+.p-about__gallery {
+    z-index: map-get(global.$layer, "default");
+    z-index: map-get(global.$layer, "default") - 1;
+    text-align: center;
+
+    &-items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 45px;
+
+        @include global.mq('pc') {
+            margin-top: 60px;
+        }
+
+        img {
+            z-index: map-get(global.$layer, "default") - 1;
+
+            @include global.mq('pc') {
+                width: calc(100% / 3 - 24px * 2 / 3);
+                margin-right: 24px;
+                margin-bottom: 24px;
+            }
+
+            width: calc(100% / 3 - 15px * 2 / 3);
+            margin-right: 15px;
+            margin-bottom: 15px;
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+        }
+    }
+}

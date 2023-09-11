@@ -1,0 +1,90 @@
+@use "../global" as global;
+
+.l-staff {
+
+    .swiper_2 {
+        width: 600px;
+        height: 300px;
+    }
+
+    &__director {
+        &-inner {
+            width: 100%;
+
+            @include global.mq('sp') {
+                padding: 0 20px;
+                margin-bottom: 100px;
+            }
+
+            @include global.mq('tab') {
+                padding: 0 50px;
+                margin-bottom: 100px;
+            }
+
+            @include global.mq('pc') {
+                width: 1000px;
+                margin: 0 auto 160px;
+            }
+        }
+    }
+
+    &__dh {
+        &-inner {
+            width: 100%;
+
+            @include global.mq('sp') {
+                padding: 0 20px;
+                margin-bottom: 100px;
+            }
+
+            @include global.mq('tab') {
+                padding: 0 50px;
+                margin-bottom: 100px;
+            }
+
+            @include global.mq('pc') {
+                width: 1000px;
+                margin: 0 auto 160px;
+            }
+        }
+    }
+
+}
+
+#staff,
+#director {
+    margin-top: 160px;
+
+    @include global.mq('tab') {
+        margin-top: 100px;
+    }
+
+    @include global.mq('sp') {
+        margin-top: 80px;
+    }
+}
+
+#staff {
+    margin-top: 160px;
+
+    @include global.mq('tab') {
+        margin-top: 100px;
+    }
+
+    @include global.mq('sp') {
+        margin-top: 80px;
+    }
+}
+
+
+#director {
+    margin-bottom: 160px;
+
+    @include global.mq('tab') {
+        margin-bottom: 100px;
+    }
+
+    @include global.mq('sp') {
+        margin-bottom: 80px;
+    }
+}

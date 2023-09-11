@@ -1,0 +1,14 @@
+@use "../global" as global;
+
+.p-pagetop {
+    position: fixed;
+    right: 15px;
+    bottom: 40px;
+    z-index: map-get(global.$layer, "floating");
+    height: 52px;
+    width: 52px;
+    background-image: url(../img/トップ/totop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top top;
+}

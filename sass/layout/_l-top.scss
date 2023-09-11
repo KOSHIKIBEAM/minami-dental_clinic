@@ -1,0 +1,74 @@
+@use "../global" as global;
+
+.l-top {
+
+    &__recommend,
+    &__medical,
+    &__blog {
+        position: relative;
+        z-index: map-get(global.$layer, "default");
+        padding-top: 110px;
+        padding: 0 150px;
+
+        @include global.mq('sp') {
+            padding: 0 15px;
+        }
+    }
+
+    &__recommend {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    &__medical {
+        background-color: global.$sub-color02;
+        padding-bottom: 100px;
+    }
+
+    &__blog {
+        margin: 60px auto 160px;
+    }
+}
+
+.l-top__concept {
+    margin-top: 60px;
+    padding-top: 110px;
+    overflow: hidden;
+
+    @include global.mq('pc') {
+        padding-top: 240px;
+        padding-bottom: 240px;
+    }
+
+    @include global.mq('tab') {
+        padding-top: 140px;
+        padding-bottom: 140px;
+    }
+
+    position: relative;
+    z-index: map-get(global.$layer, "default");
+
+    &::before {
+        content: '';
+        z-index: map-get(global.$layer, "default") - 2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 308px;
+        background-image: url(http://koshikibeam.website/minami-dentalclinic/wp-content/uploads/2023/07/concept-bg-1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top left;
+
+        @include global.mq('pc') {
+            margin-left: 416px;
+            height: 725px;
+        }
+
+        @include global.mq('tab') {
+            margin-left: 416px;
+            height: 725px;
+        }
+    }
+}

@@ -1,0 +1,77 @@
+@use "../global" as global;
+
+.pagination {
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0 8px;
+        list-style-type: none;
+        padding: 0;
+
+        .prev,
+        .next {
+            gap: 0 4px;
+            width: auto;
+            padding: .5em .8em;
+            line-height: 1;
+            color: global.$text-color2;
+            background: global.$main-color;
+        }
+
+        .prev {
+            &::before {
+                background-image: url(../img/05/arrow-circle-left.svg);
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                content: '';
+            }
+        }
+
+        .next {
+            &::after {
+                background-image: url(../img/05/arrow-circle-right.svg);
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                content: '';
+            }
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2em;
+            height: 2em;
+            border-radius: 4px;
+            background-color: global.$text-color2;
+            color: global.$main-color;
+            border: 1px solid global.$main-color;
+        }
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2em;
+            height: 2em;
+            border-radius: 4px;
+            background-color: global.$text-color2;
+            color: global.$main-color;
+            border: 1px solid global.$main-color;
+        }
+
+        .current {
+            background-color: global.$main-color;
+            color: global.$text-color2;
+            pointer-events: none;
+        }
+
+        a:not(:hover) {
+            text-decoration: none;
+        }
+    }
+}
